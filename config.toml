@@ -1,0 +1,59 @@
+baseURL = 'https://hellomike.page'
+languageCode = 'ko-kr'
+title = 'Hello, Mike!'
+theme = 'hugo-tania'
+paginate = 10
+hasCJKLanguage = true
+timeZone = 'Asia/Seoul'
+googleAnalytics = 'G-6SYCPPT1EY'
+enableRobotsTXT = true
+
+[author]
+  name = 'Mike'
+
+[params]
+  titleEmoji = '👋'
+  enableFootnotes = true
+  siteName = 'Hello, Mike!'
+  siteDesc = 'Mike의 개발 기록'
+  author = 'Mike'
+  maxCategoryToShow = 10
+  [params.socialOptions]
+    github = 'https://github.com/mike-kwak'
+
+[comments]
+  enabled = true
+  provider = 'giscus'
+  [comments.giscus]
+    repo = 'mike-kwak/blog'
+    id = 'R_kgDOGQ4Puw'
+    [comments.giscus.category]
+      name = 'Comments'
+      id = 'DIC_kwDOGQ4Pu84B_iwM'
+
+[menu]
+  [[menu.header]]
+    name = 'Articles'
+    url = '/articles/'
+  [[menu.header]]
+    name = 'About'
+    url = '/about/'
+  [[menu.footer]]
+    name = 'RSS'
+    url = '/index.xml'
+  [[menu.footer]]
+    name = 'About'
+    url = '/about/'
+  [[menu.footer]]
+    name = 'Github'
+    url = 'https://github.com/mike-kwak'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
