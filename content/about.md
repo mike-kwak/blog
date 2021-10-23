@@ -2,7 +2,6 @@
 title: "소개"
 comments: false
 date: 2021-10-23T00:00:00+09:00
-draft: true
 ---
 
 
