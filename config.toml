@@ -18,32 +18,40 @@ enableRobotsTXT = true
   siteDesc = 'Mike의 개발 기록'
   author = 'Mike'
   maxCategoryToShow = 10
+
   [params.socialOptions]
     github = 'https://github.com/mike-kwak'
 
-[comments]
-  enabled = true
-  provider = 'giscus'
-  [comments.giscus]
-    repo = 'mike-kwak/blog'
-    id = 'R_kgDOGQ4Puw'
-    [comments.giscus.category]
-      name = 'Comments'
-      id = 'DIC_kwDOGQ4Pu84B_iwM'
+  [params.comments]
+    enabled = true
+    provider = 'giscus'
+
+    [params.comments.giscus]
+      repo = 'mike-kwak/blog'
+      id = 'R_kgDOGQ4Puw'
+
+      [params.comments.giscus.category]
+        name = 'Comments'
+        id = 'DIC_kwDOGQ4Pu84B_iwM'
 
 [menu]
+
   [[menu.header]]
     name = 'Articles'
     url = '/articles/'
+
   [[menu.header]]
     name = 'About'
     url = '/about/'
+
   [[menu.footer]]
     name = 'RSS'
     url = '/index.xml'
+
   [[menu.footer]]
     name = 'About'
     url = '/about/'
+
   [[menu.footer]]
     name = 'Github'
     url = 'https://github.com/mike-kwak'
