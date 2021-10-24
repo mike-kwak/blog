@@ -5,6 +5,7 @@ categories: ['java', 'spring']
 tags: ['java', 'spring', 'io', 'utils']
 date: 2021-10-23T16:07:04+09:00
 slug: spring-utils-io-resources
+aliases: ['/posts/2021/io-utils-in-spring-framework']
 ---
 
 스프링에는 유용한 도구들이 많이 준비되어있다. 하지만 주변에서는 그런 존재를 몰라  라이브러리를 따로 사용하는 경우가 많았다. 이 글에서는 스프링 프레임워크의 StreamUtils, Resource 인터페이스와 그 구현체 클래스를 활용하는 팁들을 작성했다.
