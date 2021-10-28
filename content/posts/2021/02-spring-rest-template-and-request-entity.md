@@ -240,7 +240,7 @@ private ClientHttpRequestInterceptor loggingInterceptor() {
 
 문제는 `ClientHttpRequestInterceptor` 내 응답 `InputStream`을 현재 상태에서 구현 후 사용 시 인터셉터 내에서는 데이터가 존재하지만, 실제로 `RestTemplate` 객체를 사용한 곳에 리턴 값이 존재하지 않아 예외가 던저지거나 객체 내 값들이 null일 수 있다. 그 이유는 인터셉터 내의 `InputStream`이 한번 사용하면 스트림이 소모되어 다시 사용할 수 없게 되기 때문이다.
 
-그래서 필요한 것이 `BufferingClientHttpRequestFactory` 객체이다.
+그래서 필요한 것이 `BufferingClientHttpRequestFactory` 클래스이다. 이 클래스는 Buffering이 붙은 만큼 `InputStream`을 사용해도 사라지지 않는다.
 
 * [BufferingClientHttpRequestFactory JavaDoc](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/client/BufferingClientHttpRequestFactory.html)
 
