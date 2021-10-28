@@ -1,5 +1,5 @@
 ---
-title: "스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기"
+title: "스프링 RestTemplate 잘 활용하기"
 subtitle: "스프링의 RestTemplate 객체의 통신을 OkHttp나 Apache HttpComponent로 교체 해 HTTP를 더 빠르게 요청할 수 있게 설정 및 RestTemplate 사용 시 편리하게 RequestEntity 객체에 담아 요청하기. 번외로 UriComponentsBuilder를 통해 복잡한 URI를 쉽게 생성하기."
 categories: ['java', 'spring']
 tags: ['java', 'spring', 'utils', 'restful', 'http', 'rest-template', 'okhttp', 'httpcomponents', 'uri']
