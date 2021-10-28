@@ -433,7 +433,7 @@ ClientHttpRequestInterceptor 구현 및 등록
 &lt;/div>
 &lt;/div>&lt;p>위와 같은 코드로 인터페이스 내에 메소드는 하나이기 때문에, 람다로 구현할 수 있다. 그리고 &lt;code>RestTemplate&lt;/code> Bean 생성 시에 인터셉터를 삽입해줄 수 있다.&lt;/p>
 &lt;p>문제는 &lt;code>ClientHttpRequestInterceptor&lt;/code> 내 응답 &lt;code>InputStream&lt;/code>을 현재 상태에서 구현 후 사용 시 인터셉터 내에서는 데이터가 존재하지만, 실제로 &lt;code>RestTemplate&lt;/code> 객체를 사용한 곳에 리턴 값이 존재하지 않아 예외가 던저지거나 객체 내 값들이 null일 수 있다. 그 이유는 인터셉터 내의 &lt;code>InputStream&lt;/code>이 한번 사용하면 스트림이 소모되어 다시 사용할 수 없게 되기 때문이다.&lt;/p>
-&lt;p>그래서 필요한 것이 &lt;code>BufferingClientHttpRequestFactory&lt;/code> 객체이다.&lt;/p>
+&lt;p>그래서 필요한 것이 &lt;code>BufferingClientHttpRequestFactory&lt;/code> 클래스이다. 이 클래스는 Buffering이 붙은 만큼 &lt;code>InputStream&lt;/code>을 사용해도 사라지지 않는다.&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/client/BufferingClientHttpRequestFactory.html">BufferingClientHttpRequestFactory JavaDoc&lt;/a>&lt;/li>
 &lt;/ul>
