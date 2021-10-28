@@ -7,7 +7,7 @@ date: 2021-10-28T21:00:00+09:00
 slug: spring-rest-template-and-request-entity-and-uri
 ---
 
-스프링 내에선 RestTemplate란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 RestTemplate를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. RestTemplate 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, RequestEntity 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 `UriComponentsBuilder` 클래스 사용법까지 작성해 보았다.
+스프링 내에선 `RestTemplate`란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 `RestTemplate`를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. `RestTemplate` 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, `RequestEntity` 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 `UriComponentsBuilder` 클래스 사용법까지 작성해 보았다.
 
 ## RestTemplate 클래스 및 사용용도
 
@@ -263,7 +263,7 @@ public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
 
 ## RestTemplate 잘 사용하기
 
-먼저 RestTemplate 사용 시엔 new로 생성하는 것보다, 위에서 Bean 등록한 객체를 Autowired 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.
+먼저 `RestTemplate` 사용 시엔 `new`로 생성하는 것보다, 위에서 `Bean` 등록한 객체를 `Autowired` 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.
 
 ```java
 @Autowired
@@ -282,7 +282,7 @@ private RestTemplate restTemplate;
 
 - [Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html)
 
-메소드에서 매개변수로 받는 RequestEntity는 HttpEntity의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.
+메소드에서 매개변수로 받는 `RequestEntity`는 `HttpEntity`의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.
 
 ```java
 @PostMapping("/post")
@@ -352,7 +352,7 @@ private Map<String, Object> request() {
 
 ### Exception
 
-`RestTemplate` 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 [4XX]()를 받게 된다면, `HttpClientErrorException` 예외를 던진다. [5XX]()일 경우엔 `HttpServerErrorException` 예외를 던진다. 이 두 예외 클래스는 `HttpStatusCodeException`의 자식 클래스이다. 사실 이 예외 클래스들은 부모가 매우 많다. 업데이트 시에 코드 하위 호환성을 추가하며 기능을 추가하다 보니 생긴 일 같다.
+`RestTemplate` 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 [4XX](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)를 받게 된다면, `HttpClientErrorException` 예외를 던진다. [5XX](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)일 경우엔 `HttpServerErrorException` 예외를 던진다. 이 두 예외 클래스는 `HttpStatusCodeException`의 자식 클래스이다. 사실 이 예외 클래스들은 계층 관계가 복잡한데, 여러가지 예외 형태를 묶다보니 생긴 일인 듯 하다.
 
 또한 `RestTemplate` 사용 중 발생하는 예외는 `RestClientException`의 하위 클래스이다.
 
