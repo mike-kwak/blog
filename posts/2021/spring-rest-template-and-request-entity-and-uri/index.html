@@ -1,0 +1,903 @@
+<!doctype html><html lang=ko-kr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=theme-color content="dark">
+<title>스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기 | Hello, Mike!</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SYCPPT1EY"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-6SYCPPT1EY',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-6SYCPPT1EY','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<meta property="og:site_name" content="Hello, Mike!">
+<meta property="og:title" content="스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기 | Hello, Mike!">
+<meta itemprop=name content="스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기 | Hello, Mike!">
+<meta name=twitter:title content="스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기 | Hello, Mike!">
+<meta name=application-name content="스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기 | Hello, Mike!">
+<meta name=description content="Mike의 개발 기록">
+<meta name=twitter:description content="Mike의 개발 기록">
+<meta itemprop=description content="Mike의 개발 기록">
+<meta property="og:description" content="Mike의 개발 기록">
+<link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=stylesheet href=/sass/main.min.ab99ff095f832511e24ffb2fba2b51ad473b2f7e9301d674eba2c6c3a6e8bd81.css>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#2b5797">
+<meta name=theme-color content="#ffffff">
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel=stylesheet>
+<link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css>
+<style>:root{--sys-font-family:Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;--zh-font-family:"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--code-font-family:"Jetbrains Mono", Menlo, Consolas, "Nanum Gothic Coding", monospace}.footer-copyright{margin:1rem 0 0}.footer-copyright p{font-size:1rem;text-align:center}.footer-copyright a{font-size:inherit;margin:0;padding:0;border:unset;border-radius:0}.footer-copyright a:hover{background:unset}</style>
+</head>
+<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
+<body class=dark>
+<nav class=navbar>
+<div class=container>
+<div class=flex>
+<div>
+<a class=brand href=/>
+<span class=emoji>
+👋
+</span>
+Hello, Mike!
+</a>
+</div>
+<div class=flex>
+<a href=/about/>About</a>
+<a href=/articles/>Articles</a>
+<button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main>
+<div class=container>
+<article>
+<header class=article-header>
+<div class=thumb>
+<div>
+<h1>스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기</h1>
+<div class=post-meta>
+<div>
+By Mike | <time>2021-10-28</time>
+| 9 minutes
+</div>
+<div class=tags>
+<a href=/tags/java/>java</a>
+<a href=/tags/spring/>spring</a>
+<a href=/tags/utils/>utils</a>
+<a href=/tags/restful/>restful</a>
+<a href=/tags/http/>http</a>
+<a href=/tags/rest-template/>rest-template</a>
+<a href=/tags/okhttp/>okhttp</a>
+<a href=/tags/httpcomponents/>httpcomponents</a>
+<a href=/tags/uri/>uri</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+</article>
+<div class=article-post>
+<p>스프링 내에선 RestTemplate란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 RestTemplate를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. RestTemplate 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, RequestEntity 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 <code>UriComponentsBuilder</code> 클래스 사용법까지 작성해 보았다.</p>
+<h2 id=resttemplate-클래스-및-사용용도>
+<a href=#resttemplate-%ed%81%b4%eb%9e%98%ec%8a%a4-%eb%b0%8f-%ec%82%ac%ec%9a%a9%ec%9a%a9%eb%8f%84 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+RestTemplate 클래스 및 사용용도
+</h2>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/RestTemplate.html>Spring RestTemplate JavaDoc (Spring Framework 3.0 이상)</a></li>
+</ul>
+<p>HTTP 요청 시 사용하는 클래스이다. 객체를 생성하고 메소드를 살펴보면 많은 메소드들이 펼쳐져 있다. 각각의 HTTP Method마다 존재하고 매개변수에 따라 여러 메소드들을 골라 사용할 수 있다. 하지만 HTTP Method와 URL만 해도 간단하지 않다. 따라서 아래의 메소드를 사용하는 것을 권장한다.</p>
+<ul>
+<li>
+<p><code>ResponseEntity&lt;T> exchange(RequestEntity&lt;?> entity, Class&lt;T> responseType)</code></p>
+</li>
+<li>
+<p><code>ResponseEntity&lt;T> exchange(RequestEntity&lt;?> entity, ParameterizedTypeReference&lt;T> responseType)</code></p>
+</li>
+</ul>
+<p>이 두개의 메소드의 차이는 뒤의 타입 정보 전달의 차이가 존재한다. 첫번째 Class타입은 평상시에 사용하면 되지만, 만약 제네릭 타입을 받아야 할때는 두번째 메소드를 사용할 수 있다. 자세한 사용 방법은 아래 <a href=#resttemplate-%EC%9E%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0>RestTemplate 잘 사용하기</a>에서 살펴보겠다.</p>
+<p>이 RestTemplate를 그냥 new로 생성 했을 땐 자바에 내장된 <a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/HttpURLConnection.html>HttpUrlConnection</a> 클래스를 사용한다. JDK 1.1부터 사용되었고, 버전업하며 크게 개선된 건 없어 단순히 연결 후 요청하고 응답하는 액션만 처리할 뿐이다. 커넥션 방법인 <a href=https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Connection>Connection: keep-alive</a>나 <a href=https://ko.wikipedia.org/wiki/HTTP/2>HTTP/2</a>와 같은 프로토콜에서의 속도 개선사항을 적용받을 수 없다.</p>
+<h2 id=http-client-라이브러리를-resttemplate에-등록-및-bean-설정>
+<a href=#http-client-%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac%eb%a5%bc-resttemplate%ec%97%90-%eb%93%b1%eb%a1%9d-%eb%b0%8f-bean-%ec%84%a4%ec%a0%95 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+HTTP Client 라이브러리를 RestTemplate에 등록 및 Bean 설정
+</h2>
+<p>우리는 두가지 라이브러리 중 하나를 선택해 도움을 받을 수 있다.</p>
+<ul>
+<li>
+<p><a href=https://square.github.io/okhttp/>OkHttp</a></p>
+<ul>
+<li>
+<p>HTTP/2 지원.</p>
+</li>
+<li>
+<p>Android에서 HTTP 요청 시 사용하는 라이브러리인 Retrofit이 사용하는 라이브러리.</p>
+</li>
+<li>
+<p>코틀린 코드로 작성되어 코틀린 라이브러리가 의존성에 포함.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href=https://hc.apache.org/>Apache HttpComponents</a></p>
+<ul>
+<li>
+<p>자바로 작성됨.</p>
+</li>
+<li>
+<p>오랫동안 검증된 Apache Commons에서 분리한 프로젝트.</p>
+</li>
+<li>
+<p>버전 4는 HTTP/1.1까지 지원.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>라이브러리를 선택했다면 Spring Boot 2.x 기준으로 설정 방법을 설명하겠다.</p>
+<h3 id=okhttp-라이브러리-설정-방법>
+<a href=#okhttp-%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac-%ec%84%a4%ec%a0%95-%eb%b0%a9%eb%b2%95 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+OkHttp 라이브러리 설정 방법
+</h3>
+<ul>
+<li>
+<p><a href=https://search.maven.org/artifact/com.squareup.okhttp3/okhttp>Maven Central 검색 사이트</a></p>
+<ul>
+<li>
+<p>아래 코드를 바로 입력하기 보다, Maven 검색 사이트에서 최신 버전을 살펴보고 제공하는 코드를 입력하는 것을 권장한다.</p>
+</li>
+<li>
+<p>현재 OkHttp 5 alpha 버전이 등록되고 있지만 호환성을 담보하지 않으므로 최신의 4.x.x 버전을 사용 권장한다.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Maven</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependency&gt;</span>
+  <span class=nt>&lt;groupId&gt;</span>com.squareup.okhttp3<span class=nt>&lt;/groupId&gt;</span>
+  <span class=nt>&lt;artifactId&gt;</span>okhttp<span class=nt>&lt;/artifactId&gt;</span>
+  <span class=nt>&lt;version&gt;</span>4.9.2<span class=c>&lt;!-- 2021/10 기준 최신버전 --&gt;</span><span class=nt>&lt;/version&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Gradle</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-groovy data-lang=groovy><span class=n>implementation</span> <span class=s1>&#39;com.squareup.okhttp3:okhttp:4.9.2&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=apache-httpcomponents-라이브러리-설정-방법>
+<a href=#apache-httpcomponents-%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac-%ec%84%a4%ec%a0%95-%eb%b0%a9%eb%b2%95 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Apache HttpComponents 라이브러리 설정 방법
+</h3>
+<ul>
+<li>
+<p><strong>주의! HttpComponents 5 이상 버전은 Spring Framework 5.3 에서 사전 설정이 존재하지 않음!</strong></p>
+<ul>
+<li>만약 직접 사용 시엔 <a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html>ClientHttpRequestFactory</a> 인터페이스를 이용해 클래스 구현.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://search.maven.org/artifact/org.apache.httpcomponents/httpclient>Maven Central 검색 사이트</a></p>
+<ul>
+<li>아래 코드를 바로 입력하기 보다, Maven 검색 사이트에서 최신 버전을 살펴보고 제공하는 코드를 입력하는 것을 권장한다.</li>
+</ul>
+</li>
+<li>
+<p>Maven</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependency&gt;</span>
+  <span class=nt>&lt;groupId&gt;</span>org.apache.httpcomponents<span class=nt>&lt;/groupId&gt;</span>
+  <span class=nt>&lt;artifactId&gt;</span>httpclient<span class=nt>&lt;/artifactId&gt;</span>
+  <span class=nt>&lt;version&gt;</span>4.5.13<span class=c>&lt;!-- 2021/10 기준 최신버전 --&gt;</span><span class=nt>&lt;/version&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Gradle</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-groovy data-lang=groovy><span class=n>implementation</span> <span class=s1>&#39;org.apache.httpcomponents:httpclient:4.5.13&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=httpclientconfiguration-설정-코드>
+<a href=#httpclientconfiguration-%ec%84%a4%ec%a0%95-%ec%bd%94%eb%93%9c class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+HttpClientConfiguration 설정 코드
+</h3>
+<p>위 OkHttp와 HttpComponents 라이브러리 설정 시에 Spring Boot에서 제공하는 클래스가 있다. <code>RestTemplateBuilder</code> 클래스이다.</p>
+<ul>
+<li><a href=https://docs.spring.io/spring-boot/docs/2.5.x/api/org/springframework/boot/web/client/RestTemplateBuilder.html>Spring Boot RestTemplateBuilder JavaDoc</a></li>
+</ul>
+<p>이 클래스는 이미 Spring Boot를 사용 하고 있다면, <a href=https://docs.spring.io/spring-boot/docs/2.5.x/api/org/springframework/boot/autoconfigure/web/client/RestTemplateAutoConfiguration.html>RestTemplateAutoConfiguration</a>에 의해 Bean으로 설정되어있다. 이미 설정된 MessageConverter가 포함된 상태이므로 <code>RestTemplateBuilder</code> Bean을 받아 <code>build()</code> 메소드로 <code>RestTemplate</code> 클래스를 생성하여 Bean으로 등록하면 된다.</p>
+<ul>
+<li>
+<p>OkHttp 사용 시</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>okhttp3.OkHttpClient</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.boot.web.client.RestTemplateBuilder</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Bean</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.OkHttp3ClientHttpRequestFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.client.RestTemplate</span><span class=o>;</span>
+
+<span class=nd>@Configuration</span>
+<span class=kd>public</span> <span class=kd>class</span> <span class=nc>HttpClientConfiguration</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span>
+    <span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>(</span><span class=n>RestTemplateBuilder</span> <span class=n>restTemplateBuilder</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>restTemplateBuilder</span>
+            <span class=o>.</span><span class=na>requestFactory</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>OkHttp3ClientHttpRequestFactory</span><span class=o>(</span><span class=k>new</span> <span class=n>OkHttpClient</span><span class=o>()))</span>
+            <span class=o>.</span><span class=na>build</span><span class=o>();</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Apache HttpComponents 4 사용 시</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.apache.http.client.HttpClient</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.apache.http.impl.client.HttpClients</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.boot.web.client.RestTemplateBuilder</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Bean</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.HttpComponentsClientHttpRequestFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.client.RestTemplate</span><span class=o>;</span>
+
+<span class=nd>@Configuration</span>
+<span class=kd>public</span> <span class=kd>class</span> <span class=nc>HttpClientConfiguration</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span>
+    <span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>(</span><span class=n>RestTemplateBuilder</span> <span class=n>restTemplateBuilder</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>restTemplateBuilder</span>
+            <span class=o>.</span><span class=na>requestFactory</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>HttpComponentsClientHttpRequestFactory</span><span class=o>(</span><span class=n>HttpClients</span><span class=o>.</span><span class=na>createDefault</span><span class=o>()))</span>
+            <span class=o>.</span><span class=na>build</span><span class=o>();</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>만약, Spring Boot 기반이 아닌 구 버전 사용자는 <code>RestTemplate</code>를 <code>new</code>로 생성 후 등록할 수도 있다.</p>
+<ul>
+<li>
+<p>OkHttp 사용 시 (Spring Framework 4.3 이상)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>okhttp3.OkHttpClient</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Bean</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.OkHttp3ClientHttpRequestFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.client.RestTemplate</span><span class=o>;</span>
+
+<span class=o>...</span>
+
+<span class=nd>@Bean</span>
+<span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>(</span><span class=k>new</span> <span class=n>OkHttp3ClientHttpRequestFactory</span><span class=o>(</span><span class=k>new</span> <span class=n>OkHttpClient</span><span class=o>()));</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Apache HttpComponents 4 사용 시 (Spring Framework 4.0 이상 권장)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.apache.http.client.HttpClient</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.apache.http.impl.client.HttpClients</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Bean</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.HttpComponentsClientHttpRequestFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.client.RestTemplate</span><span class=o>;</span>
+
+<span class=o>...</span>
+
+<span class=nd>@Bean</span>
+<span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>(</span><span class=k>new</span> <span class=n>HttpComponentsClientHttpRequestFactory</span><span class=o>(</span><span class=n>HttpClients</span><span class=o>.</span><span class=na>createDefault</span><span class=o>());</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=clienthttprequestinterceptor-구현-및-등록>
+<a href=#clienthttprequestinterceptor-%ea%b5%ac%ed%98%84-%eb%b0%8f-%eb%93%b1%eb%a1%9d class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+ClientHttpRequestInterceptor 구현 및 등록
+</h3>
+<p><code>RestTemplate</code>을 통해 요청 전, 후로 어떠한 작업을 하고 싶다면, <code>ClientHttpRequestInterceptor</code> 인터페이스를 구현해 붙이면 된다. 특히 반복적으로 인증 헤더를 붙인다던지, 요청 로그를 찍을 때 유용하다.</p>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/client/ClientHttpRequestInterceptor.html>ClientHttpRequestInterceptor JavaDoc</a></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=o>...</span>
+<span class=kn>import</span> <span class=nn>org.slf4j.Logger</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.slf4j.LoggerFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.ClientHttpRequestInterceptor</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.ClientHttpResponse</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.util.StreamUtils</span><span class=o>;</span>
+
+<span class=kn>import</span> <span class=nn>java.nio.charset.StandardCharsets</span><span class=o>;</span>
+<span class=o>...</span>
+
+<span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>LoggerFactory</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>HttpClientConfiguration</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+
+<span class=nd>@Bean</span>
+<span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>(</span><span class=n>RestTemplateBuilder</span> <span class=n>restTemplateBuilder</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>restTemplateBuilder</span>
+        <span class=o>.</span><span class=na>requestFactory</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>OkHttp3ClientHttpRequestFactory</span><span class=o>(</span><span class=k>new</span> <span class=n>OkHttpClient</span><span class=o>()))</span>
+        <span class=o>.</span><span class=na>interceptors</span><span class=o>(</span><span class=n>loggingInterceptor</span><span class=o>())</span>
+        <span class=o>.</span><span class=na>build</span><span class=o>();</span>
+<span class=o>}</span>
+
+<span class=kd>private</span> <span class=n>ClientHttpRequestInterceptor</span> <span class=nf>loggingInterceptor</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=o>(</span><span class=n>req</span><span class=o>,</span> <span class=n>reqBody</span><span class=o>,</span> <span class=n>execution</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+        <span class=c1>// HTTP Request 로그
+</span><span class=c1></span>        <span class=k>if</span> <span class=o>(</span><span class=n>log</span><span class=o>.</span><span class=na>isDebugEnabled</span><span class=o>())</span> <span class=o>{</span>
+            <span class=n>log</span><span class=o>.</span><span class=na>debug</span><span class=o>(</span><span class=s>&#34;req {} {}, body: {}&#34;</span><span class=o>,</span> <span class=n>req</span><span class=o>.</span><span class=na>getMethodValue</span><span class=o>(),</span> <span class=n>req</span><span class=o>.</span><span class=na>getURI</span><span class=o>(),</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>reqBody</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>));</span>
+        <span class=o>}</span>
+
+        <span class=c1>// HTTP 요청 실행
+</span><span class=c1></span>        <span class=n>ClientHttpResponse</span> <span class=n>res</span> <span class=o>=</span> <span class=n>execution</span><span class=o>.</span><span class=na>execute</span><span class=o>(</span><span class=n>req</span><span class=o>,</span> <span class=n>reqBody</span><span class=o>);</span>
+
+        <span class=c1>// HTTP Response 로그
+</span><span class=c1></span>        <span class=k>if</span> <span class=o>(</span><span class=n>log</span><span class=o>.</span><span class=na>isDebugEnabled</span><span class=o>())</span> <span class=o>{</span>
+            <span class=n>log</span><span class=o>.</span><span class=na>debug</span><span class=o>(</span><span class=s>&#34;res {}, body: {}&#34;</span><span class=o>,</span> <span class=n>res</span><span class=o>.</span><span class=na>getRawStatusCode</span><span class=o>(),</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToString</span><span class=o>(</span><span class=n>res</span><span class=o>.</span><span class=na>getBody</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>));</span>
+        <span class=o>}</span>
+        <span class=k>return</span> <span class=n>res</span><span class=o>;</span>
+    <span class=o>};</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>위와 같은 코드로 인터페이스 내에 메소드는 하나이기 때문에, 람다로 구현할 수 있다. 그리고 <code>RestTemplate</code> Bean 생성 시에 인터셉터를 삽입해줄 수 있다.</p>
+<p>문제는 <code>ClientHttpRequestInterceptor</code> 내 응답 <code>InputStream</code>을 현재 상태에서 구현 후 사용 시 인터셉터 내에서는 데이터가 존재하지만, 실제로 <code>RestTemplate</code> 객체를 사용한 곳에 리턴 값이 존재하지 않아 예외가 던저지거나 객체 내 값들이 null일 수 있다. 그 이유는 인터셉터 내의 <code>InputStream</code>이 한번 사용하면 스트림이 소모되어 다시 사용할 수 없게 되기 때문이다.</p>
+<p>그래서 필요한 것이 <code>BufferingClientHttpRequestFactory</code> 객체이다.</p>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/client/BufferingClientHttpRequestFactory.html>BufferingClientHttpRequestFactory JavaDoc</a></li>
+</ul>
+<p>이 클래스의 생성자는 간단하게 우리가 실제 사용할 <code>ClientHttpRequestFactory</code> 객체를 한번 감싸주면 된다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=o>...</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.client.BufferingClientHttpRequestFactory</span><span class=o>;</span>
+<span class=o>...</span>
+
+<span class=nd>@Bean</span>
+<span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>(</span><span class=n>RestTemplateBuilder</span> <span class=n>restTemplateBuilder</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>restTemplateBuilder</span>
+        <span class=o>.</span><span class=na>requestFactory</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>BufferingClientHttpRequestFactory</span><span class=o>(</span>
+                          <span class=k>new</span> <span class=n>OkHttp3ClientHttpRequestFactory</span><span class=o>(</span><span class=k>new</span> <span class=n>OkHttpClient</span><span class=o>())</span>
+                        <span class=o>))</span>
+        <span class=o>.</span><span class=na>build</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=resttemplate-잘-사용하기>
+<a href=#resttemplate-%ec%9e%98-%ec%82%ac%ec%9a%a9%ed%95%98%ea%b8%b0 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+RestTemplate 잘 사용하기
+</h2>
+<p>먼저 RestTemplate 사용 시엔 new로 생성하는 것보다, 위에서 Bean 등록한 객체를 Autowired 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=nd>@Autowired</span>
+<span class=kd>private</span> <span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>위에서 두 <code>exchange</code> 메소드를 언급했었다.</p>
+<ul>
+<li>
+<p><code>ResponseEntity&lt;T> exchange(RequestEntity&lt;?> entity, Class&lt;T> responseType)</code></p>
+</li>
+<li>
+<p><code>ResponseEntity&lt;T> exchange(RequestEntity&lt;?> entity, ParameterizedTypeReference&lt;T> responseType)</code></p>
+</li>
+</ul>
+<p>이 메소드를 이용해 HTTP 요청을 보내고 받는 코드 예제를 보여줄 것이다. 이 두 메소드의 차이는 리턴 타입을 받는 형태의 차이이다. 위의 클래스 타입을 매개변수로 받는 메소드는 간단한 <code>String.class</code>, <code>byte[].class</code>, 제네릭 클래스가 아닌 모든 클래스 타입에 사용할 수 있다.</p>
+<p>만약 Map, List나 기타 컬렉션류, 제네릭 클래스일 경우엔 아래의 <a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html>ParameterizedTypeReference</a> 클래스를 객체로 생성하여 타입을 받을 수 있다. 여기서 <code>ParameterizedTypeReference&lt;T></code> 생성자는 <code>protected</code>이지만 익명 객체로 아무런 구현 없이 <code>new ParameterizedTypeReference&lt;Map&lt;String, Object>>() {}</code>와 같이 생성할 수 있다.</p>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html>Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)</a></li>
+</ul>
+<p>메소드에서 매개변수로 받는 RequestEntity는 HttpEntity의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=nd>@PostMapping</span><span class=o>(</span><span class=s>&#34;/post&#34;</span><span class=o>)</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>post</span><span class=o>(</span><span class=n>RequestEntity</span><span class=o>&lt;</span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;&gt;</span> <span class=n>request</span><span class=o>)</span> <span class=o>{</span>
+    <span class=o>...</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>여기서는 RestTemplate의 요청 객체로 선언하여 사용할 수 있다. 아래는 간단한 예제이다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.core.ParameterizedTypeReference</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.RequestEntity</span><span class=o>;</span>
+
+<span class=kn>import</span> <span class=nn>java.net.URI</span><span class=o>;</span>
+
+<span class=o>...</span>
+
+<span class=kd>private</span> <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;</span> <span class=nf>request</span><span class=o>()</span> <span class=o>{</span>
+    <span class=n>RequestEntity</span><span class=o>&lt;</span><span class=n>Void</span><span class=o>&gt;</span> <span class=n>request</span> <span class=o>=</span> <span class=n>RequestEntity</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>URI</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;https://httpbin.org/anything&#34;</span><span class=o>)).</span><span class=na>build</span><span class=o>();</span>
+    <span class=k>return</span> <span class=n>restTemplate</span><span class=o>.</span><span class=na>exchange</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=k>new</span> <span class=n>ParameterizedTypeReference</span><span class=o>&lt;&gt;()</span> <span class=o>{}).</span><span class=na>getBody</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>조금 더 복잡한 예제인 아래와 같은 형태의 JSON 문서를 POST 요청 하는 것을 해보자.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+    <span class=nt>&#34;send_id&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nt>&#34;message&#34;</span><span class=p>:</span> <span class=s2>&#34;Hello, Mike!&#34;</span><span class=p>,</span>
+    <span class=nt>&#34;receiver&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;mike&#34;</span><span class=p>,</span> <span class=s2>&#34;anonymous&#34;</span><span class=p>],</span>
+    <span class=nt>&#34;is_beep&#34;</span><span class=p>:</span> <span class=kc>true</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>이러한 JSON 객체를 요청하고 응답하는 메소드는 다음과 같다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.core.ParameterizedTypeReference</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.http.RequestEntity</span><span class=o>;</span>
+
+<span class=kn>import</span> <span class=nn>java.net.URI</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>java.util.Arrays</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>java.util.Map</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>java.util.HashMap</span><span class=o>;</span>
+
+<span class=o>...</span>
+
+<span class=kd>private</span> <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;</span> <span class=nf>request</span><span class=o>()</span> <span class=o>{</span>
+    <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;</span> <span class=n>requestBodyMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
+
+    <span class=n>requestBodyMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;send_id&#34;</span><span class=o>,</span> <span class=n>1</span><span class=o>);</span>
+    <span class=n>requestBodyMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;message&#34;</span><span class=o>,</span> <span class=s>&#34;Hello, Mike!&#34;</span><span class=o>);</span>
+    <span class=n>requestBodyMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;receiver&#34;</span><span class=o>,</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>asList</span><span class=o>(</span><span class=s>&#34;mike&#34;</span><span class=o>,</span> <span class=s>&#34;anonymous&#34;</span><span class=o>));</span>
+    <span class=n>requestBodyMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;is_beep&#34;</span><span class=o>,</span> <span class=kc>true</span><span class=o>);</span>
+
+    <span class=n>RequestEntity</span><span class=o>&lt;</span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;&gt;</span> <span class=n>request</span> <span class=o>=</span>
+            <span class=n>RequestEntity</span><span class=o>.</span><span class=na>post</span><span class=o>(</span><span class=n>URI</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;https://httpbin.org/anything&#34;</span><span class=o>))</span>
+                        <span class=o>.</span><span class=na>body</span><span class=o>(</span><span class=n>requestBodyMap</span><span class=o>);</span>
+
+    <span class=k>return</span> <span class=n>restTemplate</span><span class=o>.</span><span class=na>exchange</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=k>new</span> <span class=n>ParameterizedTypeReference</span><span class=o>&lt;&gt;()</span> <span class=o>{}).</span><span class=na>getBody</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>간단한 형태는 <code>Map&lt;String, Object></code> 타입으로 주고 받을 수 있고, 복잡한 형태는 Value Object 클래스를 만들어 사용할 수도 있다.</p>
+<h3 id=exception>
+<a href=#exception class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Exception
+</h3>
+<p><code>RestTemplate</code> 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 <a href>4XX</a>를 받게 된다면, <code>HttpClientErrorException</code> 예외를 던진다. <a href>5XX</a>일 경우엔 <code>HttpServerErrorException</code> 예외를 던진다. 이 두 예외 클래스는 <code>HttpStatusCodeException</code>의 자식 클래스이다. 사실 이 예외 클래스들은 부모가 매우 많다. 업데이트 시에 코드 하위 호환성을 추가하며 기능을 추가하다 보니 생긴 일 같다.</p>
+<p>또한 <code>RestTemplate</code> 사용 중 발생하는 예외는 <code>RestClientException</code>의 하위 클래스이다.</p>
+<ul>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/RestClientException.html>RestClientException (Spring 3.0 이상)</a></p>
+<ul>
+<li>모든 RestTemplate의 Exception 처리를 담당한다. HTTP 응답 에러 뿐만 아니라 I/O 에러, JSON 이나 XML 포멧 등을 처리 하기 위한 MessageConverter 작동 중 에러 등 모두를 포함한다.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/RestClientResponseException.html>RestClientResponseException (Spring 4.3 이상)</a></p>
+<ul>
+<li>HTTP 응답 에러를 위한 예외 클래스이다. 모든 응답 상태를 잡으려면 이 예외 발생 객체를 처리하면 된다.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/UnknownHttpStatusCodeException.html>UnknownHttpStatusCodeException (Spring 4.2 이상)</a></p>
+<ul>
+<li>HTTP 응답 에러 중 표준이 아닌 알 수 없는 응답 상태에 대한 예외 처리를 위한 클래스이다.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/HttpStatusCodeException.html>HttpStatusCodeException (Spring 3.0 이상)</a></p>
+<ul>
+<li>HTTP 응답 에러 중 알려진 응답 상태에 대한 예외 처리를 위한 클래스이다.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/HttpClientErrorException.html>HttpClientErrorException (Spring 3.0 이상)</a></p>
+<ul>
+<li>HTTP 4XX Client Error 응답 시에 던져지는 예외 클래스이다.</li>
+</ul>
+</li>
+<li>
+<p><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/client/HttpServerErrorException.html>HttpServerErrorException (Spring 3.0 이상)</a></p>
+<ul>
+<li>HTTP 5XX Server Error 응답 시에 던져지는 예외 클래스이다.</li>
+</ul>
+</li>
+</ul>
+<p>위와 같은 예외 클래스 계층이 존재하며, 필요한 목적에 따라 사용할 수 있다. 보통은 <code>RestClientResponseException</code> 타입만 <code>catch</code>해서 사용하면 응답하는 모든 상태에 대한 처리를 할 수 있다.</p>
+<h2 id=번외-uricomponentbuilder>
+<a href=#%eb%b2%88%ec%99%b8-uricomponentbuilder class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+번외, UriComponentBuilder
+</h2>
+<p><code>URI.create(String uri)</code> 정적 생성 메소드는 문자열로 간단하게 URI 객체를 생성할 수 있지만 매개변수 문자열이 잘못된 형식일 때 <code>URISyntaxException</code> 예외가 던져지는 위험이 존재하고, URI 형태가 비슷하면서 어떠한 경로나 쿼리 변수만 다르게 템플릿화 시키고 싶다면 문자열로 직접 사용하는 것은 하드코딩이 될 수 있다.</p>
+<p>그래서 안전하고 템플릿 형태로 만들 수 있는 <code>UriComponentsBuilder</code> 클래스와 <code>UriComponents</code> 클래스 두개의 사용법을 간단히 소개한다.</p>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/util/UriComponentsBuilder.html>Spring UriComponentsBuilder JavaDoc</a></li>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/util/UriComponents.html>Spring UriComponents JavaDoc</a></li>
+<li><a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html>JDK java.net.URI JavaDoc</a></li>
+</ul>
+<p><code>UriComponentsBuilder</code> 클래스는 new 생성자가 아닌, 정적 생성 메서드가 몇가지 존재한다.</p>
+<ul>
+<li>
+<p><code>UriComponentsBuilder.fromHttpUrl(String httpUrl)</code></p>
+<ul>
+<li>일반적으로 사용하는 주소창의 URL을 문자열로 받는다.</li>
+<li><code>https://www.google.com/search?q=resttemplate</code> 과 같은 형태.</li>
+</ul>
+</li>
+<li>
+<p><code>UriComponentsBuilder.fromPath(String path)</code></p>
+<ul>
+<li>프로토콜이나 도메인이 빠진 경로 형태의 문자열을 받을 수 있다.</li>
+<li><code>/auth/tokens</code> 와 같은 형태</li>
+<li><code>{variable}</code>과 같이 템플릿을 위한 변수 설정도 가능하다.</li>
+</ul>
+</li>
+<li>
+<p><code>UriComponentsBuilder.fromUri(URI uri)</code></p>
+<ul>
+<li><code>java.net.URI</code> 객체를 받는 형태</li>
+</ul>
+</li>
+<li>
+<p><code>UriComponentsBuilder.fromUriString(String uri)</code></p>
+<ul>
+<li>URI의 문자열 형태를 받을 수 있다.</li>
+<li>URI는 웹 주소 뿐만 아니라 <code>tel:+82-2-0000-0000</code>, <code>mailto:someone@example.com?subject=hello</code> 같은 형태도 가능.</li>
+</ul>
+</li>
+<li>
+<p><code>UriComponentsBuilder.newInstance()</code></p>
+<ul>
+<li>아무런 매개변수 없이 일단 객체를 생성한다.</li>
+</ul>
+</li>
+<li>
+<p>기타 다른 메소드는 JavaDoc 참조</p>
+</li>
+</ul>
+<p>정적 생성 메서드를 매개로 Builder 패턴으로 필요한 것을 붙여가며 객체 생성이 가능하다. 주요 빌더 메서드들은 다음과 같다.</p>
+<ul>
+<li>
+<p><code>scheme(String scheme)</code>, <code>host(String host)</code>, <code>port(int port)</code></p>
+<ul>
+<li>scheme는 http, https, ftp와 같은 프로토콜이 될 수 있다. 또는 tel, mailto와 같은 정보 단위일 수 있다.</li>
+<li>host는 <code>google.com</code>, <code>youtube.com</code>, <code>127.0.0.1</code>과 같은 ip나 hostname 이다.</li>
+<li>port는 프로토콜 통신 시 HTTP 80, HTTPS 443과 같은 기본 포트가 아닐 시 지정한다.</li>
+</ul>
+</li>
+<li>
+<p><code>path(String path)</code>, <code>pathSegment(String... pathSegments)</code></p>
+<ul>
+<li>path는 <code>/</code>부터 시작하며 <code>/v3/auth/tokens</code>와 같은 위치를 나타낸다.</li>
+<li>pathSegment는 경로의 조각이며 <code>auth/token</code>과 같은 조각을 뜻한다.</li>
+</ul>
+</li>
+<li>
+<p><code>replacePath(String path)</code></p>
+<ul>
+<li>replacePath는 이미 지정한 경로를 지우고 새로 지정하는 것이다.</li>
+</ul>
+</li>
+<li>
+<p><code>queryParam(String name, Object... values)</code>, <code>queryParam(String name, Collection&lt;?> values)</code></p>
+<ul>
+<li>queryParam은 <code>?</code> 뒤의 매개변수를 지정하는 것이며, URI에서 <code>?query=http&page=2</code>와 같은 형태다.</li>
+<li>values 뒤에 여러 개의 객체 또는 객체 컬렉션을 지정할 수 있으며, <code>?query=first&query=second</code>와 같이 붙는다.</li>
+</ul>
+</li>
+<li>
+<p><code>queryParams(MultiValueMap&lt;String, String> params)</code></p>
+<ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/util/MultiValueMap.html>MultiValueMap</a>으로 위의 파라메터를 한꺼번에 지정할 수 있으며, 사용 시엔 구현체인 <a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/util/LinkedMultiValueMap.html>LinkedMultiValueMap</a> 클래스를 객체로 생성하여 사용한다.</li>
+</ul>
+</li>
+<li>
+<p><code>uri(URI uri)</code>, <code>uriComponents(UriComponents uriComponents)</code></p>
+<ul>
+<li>URI 객체나 UriComponents 객체를 합칠 수 있다.</li>
+</ul>
+</li>
+<li>
+<p><code>UriComponents build()</code>, <code>UriComponents buildAndExpand(Object... uriVariableValues)</code></p>
+<ul>
+<li>모두 다 조합 후 build 메소드를 통해 UriComponents 객체를 생성한다.</li>
+<li>만약 Path 내 <code>{variable}</code>과 같은 템플릿 변수가 있다면 buildAndExpand를 통해 앞에서부터 순서대로 문자열이나 toString이 가능한 객체를 삽입시킨다.</li>
+</ul>
+</li>
+<li>
+<p>기타 다른 메소드는 JavaDoc 참조</p>
+</li>
+</ul>
+<p>만약 <code>UriComponentsBuilder</code> 객체를 통해 <code>UriComponents</code> 객체를 생성했다면, <code>toUri()</code> 메소드를 통해 우리가 사용하기 위한 실제 <code>java.net.URI</code> 객체를 생성하여 사용할 수 있다.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>UriComponents</span> <span class=n>hostUriComponents</span> <span class=o>=</span> <span class=n>UriComponentsBuilder</span><span class=o>.</span><span class=na>fromHttpUrl</span><span class=o>(</span><span class=s>&#34;https://www.example.com&#34;</span><span class=o>).</span><span class=na>build</span><span class=o>();</span>
+<span class=n>URI</span> <span class=n>uri</span> <span class=o>=</span> <span class=n>UriComponentsBuilder</span><span class=o>.</span><span class=na>fromPath</span><span class=o>(</span><span class=s>&#34;/test/{testNumber}&#34;</span><span class=o>)</span>
+              <span class=o>.</span><span class=na>uriComponents</span><span class=o>(</span><span class=n>hostUriComponents</span><span class=o>)</span>
+              <span class=o>.</span><span class=na>queryParam</span><span class=o>(</span><span class=s>&#34;query&#34;</span><span class=o>,</span> <span class=s>&#34;hello&#34;</span><span class=o>)</span>
+              <span class=o>.</span><span class=na>buildAndExpand</span><span class=o>(</span><span class=s>&#34;1&#34;</span><span class=o>).</span><span class=na>toUri</span><span class=o>();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>URI 구조가 복잡하거나, 코드 분기에 따라 URI 형태가 바뀌어야 한다면 <code>UriComponentsBuilder</code> 클래스를 잘 사용하면 쉽게 URI 객체를 생성할 수 있다.</p>
+<h2 id=마치며>
+<a href=#%eb%a7%88%ec%b9%98%eb%a9%b0 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+마치며
+</h2>
+<p>스프링은 HTTP 요청 시에 <a href=https://docs.spring.io/spring-framework/docs/5.3.x/reference/html/web-reactive.html>Spring WebFlux</a> 내 <a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html>WebClient</a> 클래스를 사용하는 것을 Spring Framework 5 부턴 권장하고 있다. 하지만 서블릿 기반으로 개발한 코드 위에 <code>WebClient</code> 하나 만을 위해 라이브러리 의존성 추가 하는 것도 이상하다. 또한 <a href=https://projectreactor.io/>Project Reactor</a> 라이브러리의 비동기 코드를 이해해야 사용하기 수월하다.</p>
+<p>따라서 아직도 서블릿 기반 코드에서는 <code>RestTemplate</code> 클래스가 자주 사용하게 된다. 하지만 부적절하게 사용되는 케이스를 많이 보았었다. 이 글이 <code>RestTemplate</code> 클래스를 잘 사용할 수 있게 도와주는 가이드 역할이 되었으면 한다.</p>
+</div>
+</div>
+<div class=container>
+<nav class="flex container suggested">
+<a rel=prev href=/posts/2021/spring-utils-io-resources/ title="Previous post (older)">
+<span>Previous</span>
+스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기
+</a>
+</nav>
+</div>
+<div class=container>
+<ins class=adsbygoogle style=display:block data-ad-client=ca-pub-5449336858519050 data-ad-slot=4942900649 data-ad-format=auto data-full-width-responsive=true></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+</div>
+<div class=container>
+<script src=https://giscus.app/client.js data-repo=mike-kwak/blog data-repo-id=R_kgDOGQ4Puw data-category=Comments data-category-id=DIC_kwDOGQ4Pu84B_iwM data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-theme=light crossorigin=anonymous async></script>
+<script>function setGiscusTeheme(b){let a=document.querySelector('.giscus iframe');a&&a.contentWindow.postMessage({giscus:{setConfig:{theme:b}}},'https://giscus.app')}addEventListener('message',a=>{if(a.origin!=='https://giscus.app')return;setGiscusTeheme(document.documentElement.dataset.userColorScheme)}),window.addEventListener('onColorSchemeChange',a=>{setGiscusTeheme(a.detail)})</script>
+</div>
+</main>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5449336858519050" crossorigin=anonymous></script>
+</main>
+<footer class="footer flex">
+<section class=container>
+<nav class=footer-links>
+<a href=/about/>About</a>
+<a href=https://github.com/mike-kwak>Github</a>
+<a href=/index.xml>RSS</a>
+</nav>
+<div class=footer-copyright>
+<p>&copy; 2021 Mike.</p>
+<p>Article is <a href=https://creativecommons.org/licenses/by/4.0/deed.ko>CC-BY 4.0</a>. Sample code is <a href=https://creativecommons.org/publicdomain/mark/1.0/>Public Domain</a>. <a href=/about/#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4>More Licences</a>.</p>
+</div>
+</section>
+<script defer src=/ts/features.c81551cd4dbef120af278f16966a41142c02be9ff5d6a669be09820fbf047456.js data-enable-footnotes=true></script>
+</footer>
+</body>
+</html>
