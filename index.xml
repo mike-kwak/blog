@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello, Mike!</title><link>https://hellomike.page/</link><description>Recent content on Hello, Mike!</description><generator>Hugo -- gohugo.io</generator><language>ko-kr</language><lastBuildDate>Thu, 28 Oct 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://hellomike.page/index.xml" rel="self" type="application/rss+xml"/><item><title>스프링 RestTemplate HTTP Client 설정 및 RequestEntity에 담아 요청하기, UriComponentsBuilder 사용하기</title><link>https://hellomike.page/posts/2021/spring-rest-template-and-request-entity-and-uri/</link><pubDate>Thu, 28 Oct 2021 21:00:00 +0900</pubDate><guid>https://hellomike.page/posts/2021/spring-rest-template-and-request-entity-and-uri/</guid><description>
-&lt;p>스프링 내에선 RestTemplate란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 RestTemplate를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. RestTemplate 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, RequestEntity 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 &lt;code>UriComponentsBuilder&lt;/code> 클래스 사용법까지 작성해 보았다.&lt;/p>
+&lt;p>스프링 내에선 &lt;code>RestTemplate&lt;/code>란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 &lt;code>RestTemplate&lt;/code>를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. &lt;code>RestTemplate&lt;/code> 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, &lt;code>RequestEntity&lt;/code> 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 &lt;code>UriComponentsBuilder&lt;/code> 클래스 사용법까지 작성해 보았다.&lt;/p>
 &lt;h2 id="resttemplate-클래스-및-사용용도">
 &lt;a href="#resttemplate-%ed%81%b4%eb%9e%98%ec%8a%a4-%eb%b0%8f-%ec%82%ac%ec%9a%a9%ec%9a%a9%eb%8f%84" class="anchor">
 &lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
@@ -477,7 +477,7 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/a>
 RestTemplate 잘 사용하기
 &lt;/h2>
-&lt;p>먼저 RestTemplate 사용 시엔 new로 생성하는 것보다, 위에서 Bean 등록한 객체를 Autowired 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.&lt;/p>
+&lt;p>먼저 &lt;code>RestTemplate&lt;/code> 사용 시엔 &lt;code>new&lt;/code>로 생성하는 것보다, 위에서 &lt;code>Bean&lt;/code> 등록한 객체를 &lt;code>Autowired&lt;/code> 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -502,7 +502,7 @@ RestTemplate 잘 사용하기
 &lt;ul>
 &lt;li>&lt;a href="https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html">Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>메소드에서 매개변수로 받는 RequestEntity는 HttpEntity의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.&lt;/p>
+&lt;p>메소드에서 매개변수로 받는 &lt;code>RequestEntity&lt;/code>는 &lt;code>HttpEntity&lt;/code>의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -622,7 +622,7 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/a>
 Exception
 &lt;/h3>
-&lt;p>&lt;code>RestTemplate&lt;/code> 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 &lt;a href="">4XX&lt;/a>를 받게 된다면, &lt;code>HttpClientErrorException&lt;/code> 예외를 던진다. &lt;a href="">5XX&lt;/a>일 경우엔 &lt;code>HttpServerErrorException&lt;/code> 예외를 던진다. 이 두 예외 클래스는 &lt;code>HttpStatusCodeException&lt;/code>의 자식 클래스이다. 사실 이 예외 클래스들은 부모가 매우 많다. 업데이트 시에 코드 하위 호환성을 추가하며 기능을 추가하다 보니 생긴 일 같다.&lt;/p>
+&lt;p>&lt;code>RestTemplate&lt;/code> 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses">4XX&lt;/a>를 받게 된다면, &lt;code>HttpClientErrorException&lt;/code> 예외를 던진다. &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses">5XX&lt;/a>일 경우엔 &lt;code>HttpServerErrorException&lt;/code> 예외를 던진다. 이 두 예외 클래스는 &lt;code>HttpStatusCodeException&lt;/code>의 자식 클래스이다. 사실 이 예외 클래스들은 계층 관계가 복잡한데, 여러가지 예외 형태를 묶다보니 생긴 일인 듯 하다.&lt;/p>
 &lt;p>또한 &lt;code>RestTemplate&lt;/code> 사용 중 발생하는 예외는 &lt;code>RestClientException&lt;/code>의 하위 클래스이다.&lt;/p>
 &lt;ul>
 &lt;li>

@@ -84,7 +84,7 @@ By Mike | <time>2021-10-28</time>
 </header>
 </article>
 <div class=article-post>
-<p>스프링 내에선 RestTemplate란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 RestTemplate를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. RestTemplate 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, RequestEntity 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 <code>UriComponentsBuilder</code> 클래스 사용법까지 작성해 보았다.</p>
+<p>스프링 내에선 <code>RestTemplate</code>란 객체가 존재해 HTTP 요청을 쉽게 할 수 있다. 하지만 <code>RestTemplate</code>를 요청 시 생성해서 사용하거나 하는 잘못된 방법이 존재한다. <code>RestTemplate</code> 내 HTTP Client 종류와 설명, Bean 등록 설정까지 해보고, <code>RequestEntity</code> 객체를 통해 코드 가독성 좋게 요청하는 방법과 번외로 URI를 템플릿화 하여 작성할 수 있는 <code>UriComponentsBuilder</code> 클래스 사용법까지 작성해 보았다.</p>
 <h2 id=resttemplate-클래스-및-사용용도>
 <a href=#resttemplate-%ed%81%b4%eb%9e%98%ec%8a%a4-%eb%b0%8f-%ec%82%ac%ec%9a%a9%ec%9a%a9%eb%8f%84 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
@@ -544,7 +544,7 @@ ClientHttpRequestInterceptor 구현 및 등록
 </a>
 RestTemplate 잘 사용하기
 </h2>
-<p>먼저 RestTemplate 사용 시엔 new로 생성하는 것보다, 위에서 Bean 등록한 객체를 Autowired 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.</p>
+<p>먼저 <code>RestTemplate</code> 사용 시엔 <code>new</code>로 생성하는 것보다, 위에서 <code>Bean</code> 등록한 객체를 <code>Autowired</code> 또는 생성자로 필드 선언하여 Bean 객체를 의존 주입으로 받아 사용하는 것이 좋다.</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -569,7 +569,7 @@ RestTemplate 잘 사용하기
 <ul>
 <li><a href=https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html>Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)</a></li>
 </ul>
-<p>메소드에서 매개변수로 받는 RequestEntity는 HttpEntity의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.</p>
+<p>메소드에서 매개변수로 받는 <code>RequestEntity</code>는 <code>HttpEntity</code>의 자식 클래스로, 다용도로 사용 할 수 있다. 특히 컨트롤러에서 다음과 같이 매개변수로 선언 시 요청 데이터들을 사용할 수 있다.</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -693,7 +693,7 @@ RestTemplate 잘 사용하기
 </a>
 Exception
 </h3>
-<p><code>RestTemplate</code> 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 <a href>4XX</a>를 받게 된다면, <code>HttpClientErrorException</code> 예외를 던진다. <a href>5XX</a>일 경우엔 <code>HttpServerErrorException</code> 예외를 던진다. 이 두 예외 클래스는 <code>HttpStatusCodeException</code>의 자식 클래스이다. 사실 이 예외 클래스들은 부모가 매우 많다. 업데이트 시에 코드 하위 호환성을 추가하며 기능을 추가하다 보니 생긴 일 같다.</p>
+<p><code>RestTemplate</code> 객체를 사용해서 HTTP 요청 후 응답 상태가 만약 <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses>4XX</a>를 받게 된다면, <code>HttpClientErrorException</code> 예외를 던진다. <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses>5XX</a>일 경우엔 <code>HttpServerErrorException</code> 예외를 던진다. 이 두 예외 클래스는 <code>HttpStatusCodeException</code>의 자식 클래스이다. 사실 이 예외 클래스들은 계층 관계가 복잡한데, 여러가지 예외 형태를 묶다보니 생긴 일인 듯 하다.</p>
 <p>또한 <code>RestTemplate</code> 사용 중 발생하는 예외는 <code>RestClientException</code>의 하위 클래스이다.</p>
 <ul>
 <li>
