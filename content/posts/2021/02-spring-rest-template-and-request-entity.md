@@ -15,9 +15,9 @@ slug: spring-rest-template-and-request-entity-and-uri
 
 HTTP 요청 시 사용하는 클래스이다. 객체를 생성하고 메소드를 살펴보면 많은 메소드들이 펼쳐져 있다. 각각의 HTTP Method마다 존재하고 매개변수에 따라 여러 메소드들을 골라 사용할 수 있다. 하지만 HTTP Method와 URL만 해도 간단하지 않다. 따라서 아래의 메소드를 사용하는 것을 권장한다.
 
-* `ResponseEntity<T> exchange(RequestEntity<?> entity, Class<T> responseType)`
+* `exchange(RequestEntity<?> entity, Class<T> responseType)`
 
-* `ResponseEntity<T> exchange(RequestEntity<?> entity, ParameterizedTypeReference<T> responseType)`
+* `exchange(RequestEntity<?> entity, ParameterizedTypeReference<T> responseType)`
 
 이 두개의 메소드의 차이는 뒤의 타입 정보 전달의 차이가 존재한다. 첫번째 Class타입은 평상시에 사용하면 되지만, 만약 제네릭 타입을 받아야 할때는 두번째 메소드를 사용할 수 있다. 자세한 사용 방법은 아래 [RestTemplate 잘 사용하기](#resttemplate-잘-사용하기)에서 살펴보겠다.
 
@@ -190,7 +190,7 @@ HTTP 요청 시 사용하는 클래스이다. 객체를 생성하고 메소드�
   }
   ```
 
-### ClientHttpRequestInterceptor 구현 및 등록
+### Interceptor 구현 및 등록
 
 `RestTemplate`을 통해 요청 전, 후로 어떠한 작업을 하고 싶다면, `ClientHttpRequestInterceptor` 인터페이스를 구현해 붙이면 된다. 특히 반복적으로 인증 헤더를 붙인다던지, 요청 로그를 찍을 때 유용하다.
 
@@ -272,13 +272,17 @@ private RestTemplate restTemplate;
 
 위에서 두 `exchange` 메소드를 언급했었다.
 
-- `ResponseEntity<T> exchange(RequestEntity<?> entity, Class<T> responseType)`
+- `exchange(RequestEntity<?> entity, Class<T> responseType)`
 
-- `ResponseEntity<T> exchange(RequestEntity<?> entity, ParameterizedTypeReference<T> responseType)`
+- `exchange(RequestEntity<?> entity, ParameterizedTypeReference<T> responseType)`
 
 이 메소드를 이용해 HTTP 요청을 보내고 받는 코드 예제를 보여줄 것이다. 이 두 메소드의 차이는 리턴 타입을 받는 형태의 차이이다. 위의 클래스 타입을 매개변수로 받는 메소드는 간단한 `String.class`, `byte[].class`, 제네릭 클래스가 아닌 모든 클래스 타입에 사용할 수 있다.
 
-만약 Map, List나 기타 컬렉션류, 제네릭 클래스일 경우엔 아래의 [ParameterizedTypeReference](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html) 클래스를 객체로 생성하여 타입을 받을 수 있다. 여기서 `ParameterizedTypeReference<T>` 생성자는 `protected`이지만 익명 객체로 아무런 구현 없이 `new ParameterizedTypeReference<Map<String, Object>>() {}`와 같이 생성할 수 있다.
+만약 Map, List나 기타 컬렉션류, 제네릭 클래스일 경우엔 아래의 [ParameterizedTypeReference](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html) 클래스를 객체로 생성하여 타입을 받을 수 있다. 여기서 `ParameterizedTypeReference<T>` 생성자는 `protected`이지만 익명 객체로 아무런 구현 없이 아래와 같이 생성할 수 있다.
+
+```java
+new ParameterizedTypeReference<Map<String, Object>>() {}
+```
 
 - [Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html)
 
@@ -394,23 +398,23 @@ private Map<String, Object> request() {
 
 `UriComponentsBuilder` 클래스는 new 생성자가 아닌, 정적 생성 메서드가 몇가지 존재한다.
 
-* `UriComponentsBuilder.fromHttpUrl(String httpUrl)`
+* `fromHttpUrl(String httpUrl)`
   - 일반적으로 사용하는 주소창의 URL을 문자열로 받는다.
   - `https://www.google.com/search?q=resttemplate` 과 같은 형태.
 
-* `UriComponentsBuilder.fromPath(String path)`
+* `fromPath(String path)`
   - 프로토콜이나 도메인이 빠진 경로 형태의 문자열을 받을 수 있다.
   - `/auth/tokens` 와 같은 형태
   - `{variable}`과 같이 템플릿을 위한 변수 설정도 가능하다.
 
-* `UriComponentsBuilder.fromUri(URI uri)`
+* `fromUri(URI uri)`
   - `java.net.URI` 객체를 받는 형태
 
-* `UriComponentsBuilder.fromUriString(String uri)`
+* `fromUriString(String uri)`
   - URI의 문자열 형태를 받을 수 있다.
   - URI는 웹 주소 뿐만 아니라 `tel:+82-2-0000-0000`, `mailto:someone@example.com?subject=hello` 같은 형태도 가능.
 
-* `UriComponentsBuilder.newInstance()`
+* `newInstance()`
   - 아무런 매개변수 없이 일단 객체를 생성한다.
 
 * 기타 다른 메소드는 JavaDoc 참조
