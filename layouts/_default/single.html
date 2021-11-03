@@ -50,11 +50,9 @@
     {{ end }}
 </div>
 {{ if or (not (isset .Params "comments")) (eq .Params.comments "true")}} 
-{{ partial "adsection" . }}
 <div class="container">
     {{ partial "comments/include" . }}
 </div>
 {{ end }}
 </main>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5449336858519050" crossorigin="anonymous"></script>
 {{ end }}
