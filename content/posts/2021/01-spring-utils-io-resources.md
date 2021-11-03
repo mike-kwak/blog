@@ -2,7 +2,7 @@
 title: "스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기"
 subtitle: "스프링 프레임워크의 StreamUtils, Resource를 사용하며 간단한 IO 처리를 하기 위한 팁들"
 categories: ['java', 'spring']
-tags: ['java', 'spring', 'io', 'utils']
+tags: ['java', 'spring', 'io', 'utils', 'resources', 'streamutils', 'classpath']
 date: 2021-10-23T16:07:04+09:00
 slug: spring-utils-io-resources
 aliases: ['/post/2021/io-utils-in-spring-framework']
