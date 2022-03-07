@@ -32,4 +32,19 @@
     .footer-copyright a:hover {
         background: unset;
     }
+    @media (max-width: 480px) {
+        .article-post p, ol, ul, dl, table, blockquote {
+            font-size: 0.96rem;
+        }
+        code {
+            font-size: 0.84rem;
+            word-wrap: break-word;
+        }
+        .highlight > pre > code {
+            font-size: .7rem;
+        }
+        .highlight > .chroma code[data-lang]::before {
+            font-size: .8rem;
+        }
+    }
 </style>
