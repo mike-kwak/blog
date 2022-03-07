@@ -4,16 +4,15 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=theme-color content="dark">
-<title>스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SYCPPT1EY"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-6SYCPPT1EY',{anonymize_ip:!1})}</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-6SYCPPT1EY','auto'),ga('send','pageview'))</script>
+<title>스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!</title><script async src="https://www.googletagmanager.com/gtag/js?id=G-6SYCPPT1EY"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-6SYCPPT1EY",{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-6SYCPPT1EY","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <meta property="og:site_name" content="Hello, Mike!">
 <meta property="og:title" content="스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!">
 <meta itemprop=name content="스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!">
 <meta name=twitter:title content="스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!">
-<meta name=application-name content="스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!">
+<meta name=application-name content="스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기 | Hello, Mike!"><meta name=twitter:card content="summary">
 <meta name=description content="Mike의 개발 기록">
 <meta name=twitter:description content="Mike의 개발 기록">
 <meta itemprop=description content="Mike의 개발 기록">
@@ -31,9 +30,7 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel=stylesheet>
 <link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css>
-<style>:root{--sys-font-family:Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;--zh-font-family:"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--code-font-family:"Jetbrains Mono", Menlo, Consolas, "Nanum Gothic Coding", monospace}.footer-copyright{margin:1rem 0 0}.footer-copyright p{font-size:1rem;text-align:center}.footer-copyright a{font-size:inherit;margin:0;padding:0;border:unset;border-radius:0}.footer-copyright a:hover{background:unset}</style>
-</head>
-<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
+<style>:root{--sys-font-family:Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;--zh-font-family:"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--code-font-family:"Jetbrains Mono", Menlo, Consolas, "Nanum Gothic Coding", monospace}.footer-copyright{margin:1rem 0 0}.footer-copyright p{font-size:1rem;text-align:center}.footer-copyright a{font-size:inherit;margin:0;padding:0;border:unset;border-radius:0}.footer-copyright a:hover{background:unset}@media(max-width:480px){.article-post p,ol,ul,dl,table,blockquote{font-size:.96rem}code{font-size:.84rem;word-wrap:break-word}.highlight>pre>code{font-size:.7rem}.highlight>.chroma code[data-lang]::before{font-size:.8rem}}</style></head><script>(function(){const e="ThemeColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="ThemeColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.userColorScheme="dark":document.documentElement.dataset.userColorScheme="light"})()</script>
 <body class=dark>
 <nav class=navbar>
 <div class=container>
@@ -45,29 +42,22 @@
 </span>
 Hello, Mike!
 </a>
-</div>
-<div class=flex>
+</div><div class=flex>
 <a href=/about/>About</a>
 <a href=/articles/>Articles</a>
 <button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
 </button>
-</div>
-</div>
-</div>
-</nav>
-<main>
+</div></div></div></nav><main>
 <div class=container>
 <article>
 <header class=article-header>
 <div class=thumb>
 <div>
-<h1>스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기</h1>
-<div class=post-meta>
+<h1>스프링 프레임워크에서 StreamUtils, Resource를 이용해 파일 읽어오기</h1><div class=post-meta>
 <div>
 By Mike | <time>2021-10-23</time>
 | 4 minutes
-</div>
-<div class=tags>
+</div><div class=tags>
 <a href=/tags/java/>java</a>
 <a href=/tags/spring/>spring</a>
 <a href=/tags/io/>io</a>
@@ -75,29 +65,14 @@ By Mike | <time>2021-10-23</time>
 <a href=/tags/resources/>resources</a>
 <a href=/tags/streamutils/>streamutils</a>
 <a href=/tags/classpath/>classpath</a>
-</div>
-</div>
-</div>
-</div>
-</header>
-</article>
-<div class=article-post>
-<p>스프링에는 유용한 도구들이 많이 준비되어있다. 하지만 주변에서는 그런 존재를 몰라 라이브러리를 따로 사용하는 경우가 많았다. 이 글에서는 스프링 프레임워크의 StreamUtils, Resource 인터페이스와 그 구현체 클래스를 활용하는 팁들을 작성했다.</p>
-<h2 id=streamutils-유틸-클래스>
+</div></div></div></div></header></article><div class=article-post>
+<p>스프링에는 유용한 도구들이 많이 준비되어있다. 하지만 주변에서는 그런 존재를 몰라 라이브러리를 따로 사용하는 경우가 많았다. 이 글에서는 스프링 프레임워크의 StreamUtils, Resource 인터페이스와 그 구현체 클래스를 활용하는 팁들을 작성했다.</p><h2 id=streamutils-유틸-클래스>
 <a href=#streamutils-%ec%9c%a0%ed%8b%b8-%ed%81%b4%eb%9e%98%ec%8a%a4 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 StreamUtils 유틸 클래스
-</h2>
-<ul>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/StreamUtils.html>Spring Framework StreamUtils JavaDoc</a></li>
-<li>Spring Framwork 3.2.2 부터 사용 가능</li>
-</ul>
-<p>이 유틸 클래스는 스프링 프레임워크 내에 내장되어 있고, Java Input/Output Stream을 다루기 위한 것이다. 실제로 자바에서 Input/Output Stream 다루기엔 보일러플레이트(사전 준비) 코드들이 많다.</p>
-<p>아래는 InputStream을 String으로 바꾸는 코드이다.</p>
-<ul>
-<li>코드 출처 : <a href=https://stackoverflow.com/a/35446009>How do I read / convert an InputStream into a String in Java? - Stack Overflow</a></li>
-</ul>
-<div class=highlight><div class=chroma>
+</h2><ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/StreamUtils.html>Spring Framework StreamUtils JavaDoc</a></li><li>Spring Framwork 3.2.2 부터 사용 가능</li></ul><p>이 유틸 클래스는 스프링 프레임워크 내에 내장되어 있고, Java Input/Output Stream을 다루기 위한 것이다. 실제로 자바에서 Input/Output Stream 다루기엔 보일러플레이트(사전 준비) 코드들이 많다.</p><p>아래는 InputStream을 String으로 바꾸는 코드이다.</p><ul>
+<li>코드 출처 : <a href=https://stackoverflow.com/a/35446009>How do I read / convert an InputStream into a String in Java? - Stack Overflow</a></li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -111,134 +86,75 @@ StreamUtils 유틸 클래스
 </span><span class=lnt>10
 </span><span class=lnt>11
 </span><span class=lnt>12
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=c1>// 가장 빠르다던 ByteArrayOutputStream 이용: https://stackoverflow.com/a/35446009
-</span><span class=c1></span><span class=kd>public</span> <span class=n>String</span> <span class=nf>streamToString</span><span class=o>(</span><span class=n>InputStream</span> <span class=n>inputStream</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>IOException</span> <span class=o>{</span>
-    <span class=n>ByteArrayOutputStream</span> <span class=n>result</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteArrayOutputStream</span><span class=o>();</span>
-    <span class=kt>byte</span><span class=o>[]</span> <span class=n>buffer</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>byte</span><span class=o>[</span><span class=n>1024</span><span class=o>];</span>
-    <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>length</span><span class=o>;</span> <span class=o>(</span><span class=n>length</span> <span class=o>=</span> <span class=n>inputStream</span><span class=o>.</span><span class=na>read</span><span class=o>(</span><span class=n>buffer</span><span class=o>))</span> <span class=o>!=</span> <span class=o>-</span><span class=n>1</span><span class=o>;</span> <span class=o>)</span> <span class=o>{</span>
-        <span class=n>result</span><span class=o>.</span><span class=na>write</span><span class=o>(</span><span class=n>buffer</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>length</span><span class=o>);</span>
-    <span class=o>}</span>
-    <span class=c1>// JDK 1.7 미만 사용 시 &#34;UTF-8&#34;로 대체
-</span><span class=c1></span>    <span class=k>return</span> <span class=n>result</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>.</span><span class=na>name</span><span class=o>());</span>
-<span class=o>}</span>
-<span class=o>...</span>
-<span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>streamToString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>물론 위 코드를 유틸클래스를 만들어서 구현하는 방법도 괜찮다. Java 내에선 가장 빠른 코드이기 때문이다. 하지만 저 코드가 생각나지 않을 때는 어떻게 할까? 아니면 String이 아니라 다른 형태로 받고 싶다면? <code>commons-io</code> 라이브러리의 <code>IOUtils</code> 유틸 클래스와 비슷하게, 스프링 프레임워크는 이미 <code>StreamUtils</code> 유틸 클래스를 준비해두었다.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// 가장 빠르다던 ByteArrayOutputStream 이용: https://stackoverflow.com/a/35446009
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>public</span> <span class=n>String</span> <span class=nf>streamToString</span><span class=o>(</span><span class=n>InputStream</span> <span class=n>inputStream</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>IOException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>ByteArrayOutputStream</span> <span class=n>result</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteArrayOutputStream</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=kt>byte</span><span class=o>[]</span> <span class=n>buffer</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>byte</span><span class=o>[</span><span class=n>1024</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>length</span><span class=o>;</span> <span class=o>(</span><span class=n>length</span> <span class=o>=</span> <span class=n>inputStream</span><span class=o>.</span><span class=na>read</span><span class=o>(</span><span class=n>buffer</span><span class=o>))</span> <span class=o>!=</span> <span class=o>-</span><span class=n>1</span><span class=o>;</span> <span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>result</span><span class=o>.</span><span class=na>write</span><span class=o>(</span><span class=n>buffer</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>length</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// JDK 1.7 미만 사용 시 &#34;UTF-8&#34;로 대체
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=n>result</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>.</span><span class=na>name</span><span class=o>());</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>...</span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>streamToString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>물론 위 코드를 유틸클래스를 만들어서 구현하는 방법도 괜찮다. Java 내에선 가장 빠른 코드이기 때문이다. 하지만 저 코드가 생각나지 않을 때는 어떻게 할까? 아니면 String이 아니라 다른 형태로 받고 싶다면? <code>commons-io</code> 라이브러리의 <code>IOUtils</code> 유틸 클래스와 비슷하게, 스프링 프레임워크는 이미 <code>StreamUtils</code> 유틸 클래스를 준비해두었다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.util.StreamUtils</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>java.nio.charset.StandardCharsets</span><span class=o>;</span>
-<span class=o>...</span>
-<span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=자주-쓰는-메소드>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.util.StreamUtils</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.nio.charset.StandardCharsets</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>...</span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=자주-쓰는-메소드>
 <a href=#%ec%9e%90%ec%a3%bc-%ec%93%b0%eb%8a%94-%eb%a9%94%ec%86%8c%eb%93%9c class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 자주 쓰는 메소드
-</h3>
-<ol>
+</h3><ol>
 <li>
-<p><code>static byte[] copyToByteArray(InputStream in)</code></p>
-<ul>
-<li>InputStream을 byte 배열로 반환한다.</li>
-</ul>
-</li>
-<li>
-<p><code>static String copyToString(InputStream in, Charset charset)</code></p>
-<ul>
-<li>InputStream을 문자열로 반환한다.</li>
-</ul>
-</li>
-<li>
-<p><code>static InputStream emptyInput()</code></p>
-<ul>
-<li>빈 InputStream을 반환한다.</li>
-</ul>
-</li>
-</ol>
-<p><strong>1번</strong>인 InputStream을 Byte 배열로 변환하는 메소드와 <strong>2번</strong>인 InputStream을 String으로 변환하는 메소드가 가장 많이 쓰일 것이다.</p>
-<p>IO 처리 시에는 특히나 byte 배열을 처리할 일이 많다. Base64 인코딩을 하거나 소켓을 사용할 때에도 byte 배열을 기준으로 사용한다.</p>
-<p><strong>3번</strong>인 emptyInput() 메소드는 얼핏 보면 무가치 할 것 같지만 의외의 유용성이 높은데, InputStream을 매개변수로 주거나 반환할 때 null 대신 쓰이기 좋을 것이다.</p>
-<h2 id=표준-문자셋>
+<p><code>static byte[] copyToByteArray(InputStream in)</code></p><ul>
+<li>InputStream을 byte 배열로 반환한다.</li></ul></li><li>
+<p><code>static String copyToString(InputStream in, Charset charset)</code></p><ul>
+<li>InputStream을 문자열로 반환한다.</li></ul></li><li>
+<p><code>static InputStream emptyInput()</code></p><ul>
+<li>빈 InputStream을 반환한다.</li></ul></li></ol><p><strong>1번</strong>인 InputStream을 Byte 배열로 변환하는 메소드와 <strong>2번</strong>인 InputStream을 String으로 변환하는 메소드가 가장 많이 쓰일 것이다.</p><p>IO 처리 시에는 특히나 byte 배열을 처리할 일이 많다. Base64 인코딩을 하거나 소켓을 사용할 때에도 byte 배열을 기준으로 사용한다.</p><p><strong>3번</strong>인 emptyInput() 메소드는 얼핏 보면 무가치 할 것 같지만 의외의 유용성이 높은데, InputStream을 매개변수로 주거나 반환할 때 null 대신 쓰이기 좋을 것이다.</p><h2 id=표준-문자셋>
 <a href=#%ed%91%9c%ec%a4%80-%eb%ac%b8%ec%9e%90%ec%85%8b class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 표준 문자셋
-</h2>
-<ul>
-<li><a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/StandardCharsets.html>java.nio.charset.StandardCharsets JavaDoc</a></li>
-</ul>
-<p>잠깐 짚고 넘어갈 표준 문자셋은 JDK 1.7부터 존재한다. 실제로 1.7 이전에는 문자셋 설정을 스트링으로 받았었다.</p>
-<div class=highlight><div class=chroma>
+</h2><ul>
+<li><a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/StandardCharsets.html>java.nio.charset.StandardCharsets JavaDoc</a></li></ul><p>잠깐 짚고 넘어갈 표준 문자셋은 JDK 1.7부터 존재한다. 실제로 1.7 이전에는 문자셋 설정을 스트링으로 받았었다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=s>&#34;UTF-8&#34;</span><span class=o>);</span>
-<span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>Charset</span><span class=o>.</span><span class=na>forName</span><span class=o>(</span><span class=s>&#34;UTF-8&#34;</span><span class=o>));</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>이런 식으로 처리 했어야 했는데, 문제는 String 타입의 매개변수의 문자셋 코드가 잘못 입력했을 때이다. 그땐 UnsupportEncodingException으로 인해 프로그램이 중단된다. IOException의 자식 클래스여서 더 심각했다.</p>
-<p>그래서 표준 문자셋 객체 상수를 StandardCharsets 클래스에 정의하였다. 따라서 이제는 다음과 같이 안전하게 처리할 수 있다.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=s>&#34;UTF-8&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>Charset</span><span class=o>.</span><span class=na>forName</span><span class=o>(</span><span class=s>&#34;UTF-8&#34;</span><span class=o>));</span>
+</span></span></code></pre></td></tr></table></div></div><p>이런 식으로 처리 했어야 했는데, 문제는 String 타입의 매개변수의 문자셋 코드가 잘못 입력했을 때이다. 그땐 UnsupportEncodingException으로 인해 프로그램이 중단된다. IOException의 자식 클래스여서 더 심각했다.</p><p>그래서 표준 문자셋 객체 상수를 StandardCharsets 클래스에 정의하였다. 따라서 이제는 다음과 같이 안전하게 처리할 수 있다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>만약, EUC-KR을 쓰고 싶다면? Exception을 처리해야 할 위험성이 계속 존재하지만 다음과 같은 방법으로 해야 한다.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>만약, EUC-KR을 쓰고 싶다면? Exception을 처리해야 할 위험성이 계속 존재하지만 다음과 같은 방법으로 해야 한다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>Charset</span><span class=o>.</span><span class=na>forName</span><span class=o>(</span><span class=s>&#34;EUC-KR&#34;</span><span class=o>));</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=filecopyutils-유틸-클래스>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>byteArray</span><span class=o>,</span> <span class=n>Charset</span><span class=o>.</span><span class=na>forName</span><span class=o>(</span><span class=s>&#34;EUC-KR&#34;</span><span class=o>));</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=filecopyutils-유틸-클래스>
 <a href=#filecopyutils-%ec%9c%a0%ed%8b%b8-%ed%81%b4%eb%9e%98%ec%8a%a4 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 FileCopyUtils 유틸 클래스
-</h2>
-<ul>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/FileCopyUtils.html>Spring Framework FileCopyUtils JavaDoc</a></li>
-</ul>
-<p>위의 StreamUtils 유틸 클래스는 버전 3.2.2 부터 생긴 반면, FileCopyUtils는 초기 버전에도 존재했다. 유틸 클래스 이름 그대로 파일을 복사하는 정적 메소드가 담겨있다. 자세한 내용은 JavaDoc을 참조 바란다.</p>
-<p>물론 JDK 1.7이상이라면 <a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html>java.nio.file.Files</a> 클래스를 사용하는 것이 더 좋다. 더 편리하고 다양한 유틸리티 정적 메소드들이 존재한다.</p>
-<h2 id=resource-인터페이스와-구현체>
+</h2><ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/FileCopyUtils.html>Spring Framework FileCopyUtils JavaDoc</a></li></ul><p>위의 StreamUtils 유틸 클래스는 버전 3.2.2 부터 생긴 반면, FileCopyUtils는 초기 버전에도 존재했다. 유틸 클래스 이름 그대로 파일을 복사하는 정적 메소드가 담겨있다. 자세한 내용은 JavaDoc을 참조 바란다.</p><p>물론 JDK 1.7이상이라면 <a href=https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html>java.nio.file.Files</a> 클래스를 사용하는 것이 더 좋다. 더 편리하고 다양한 유틸리티 정적 메소드들이 존재한다.</p><h2 id=resource-인터페이스와-구현체>
 <a href=#resource-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4%ec%99%80-%ea%b5%ac%ed%98%84%ec%b2%b4 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 Resource 인터페이스와 구현체
-</h2>
-<ul>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#resources>Spring Framework Manual</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/Resource.html>Spring Framework Resource JavaDoc</a></li>
-</ul>
-<p>Resource는 인터페이스다. 그냥 사용할 수는 없고 다음과 같은 구현된 클래스가 존재한다.</p>
-<ul>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/UrlResource.html>UrlResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/ClassPathResource.html>ClassPathResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/FileSystemResource.html>FileSystemResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/PathResource.html>PathResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/support/ServletContextResource.html>ServletContextResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/InputStreamResource.html>InputStreamResource</a></li>
-<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/ByteArrayResource.html>ByteArrayResource</a></li>
-</ul>
-<p>jar과 같이 묶이는 파일은 <code>ClassPathResource</code>를 이용하고, 일반적인 파일을 읽어올 땐 <code>FileSystemResource</code> 를 사용한다. 따라서 리소스에 텍스트 파일을 저장하고 읽어오고 싶을 땐 다음과 같은 방법을 사용할 수 있다.</p>
-<div class=highlight><div class=chroma>
+</h2><ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#resources>Spring Framework Manual</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/Resource.html>Spring Framework Resource JavaDoc</a></li></ul><p>Resource는 인터페이스다. 그냥 사용할 수는 없고 다음과 같은 구현된 클래스가 존재한다.</p><ul>
+<li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/UrlResource.html>UrlResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/ClassPathResource.html>ClassPathResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/FileSystemResource.html>FileSystemResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/PathResource.html>PathResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/support/ServletContextResource.html>ServletContextResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/InputStreamResource.html>InputStreamResource</a></li><li><a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/ByteArrayResource.html>ByteArrayResource</a></li></ul><p>jar과 같이 묶이는 파일은 <code>ClassPathResource</code>를 이용하고, 일반적인 파일을 읽어올 땐 <code>FileSystemResource</code> 를 사용한다. 따라서 리소스에 텍스트 파일을 저장하고 읽어오고 싶을 땐 다음과 같은 방법을 사용할 수 있다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -247,20 +163,15 @@ Resource 인터페이스와 구현체
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.core.io.Resource</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>org.springframework.core.io.ClassPathResource</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>org.springframework.util.StreamUtils</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>java.nio.charset.StandardCharsets</span><span class=o>;</span>
-<span class=o>...</span>
-<span class=n>Resource</span> <span class=n>resource</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ClassPathResource</span><span class=o>(</span><span class=s>&#34;load.txt&#34;</span><span class=o>);</span>
-<span class=n>String</span> <span class=n>loaded</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToString</span><span class=o>(</span><span class=n>resource</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>간편한 방법이지만 이건 경로를 직접 하드코딩 해야하는 단점도 존재한다. 스프링 프레임워크를 쓰는 이유가 강력한 Dependency Injection(의존 주입)에 의한 IoC 컨테이너를 사용 하기 위함도 있을 것이다.</p>
-<p>특히 스프링 부트를 사용한다면 application.properties (또는 yaml)의 존재를 알 것이다. properties와 <a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html>@Value</a> 애노테이션의 조합으로 DI를 이용해 불러 올 수도 있다.</p>
-<pre tabindex=0><code class=language-properties data-lang=properties>load.resource=classpath:load.txt
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.core.io.Resource</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.core.io.ClassPathResource</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.util.StreamUtils</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.nio.charset.StandardCharsets</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>...</span>
+</span></span><span class=line><span class=cl><span class=n>Resource</span> <span class=n>resource</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ClassPathResource</span><span class=o>(</span><span class=s>&#34;load.txt&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>loaded</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToString</span><span class=o>(</span><span class=n>resource</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>간편한 방법이지만 이건 경로를 직접 하드코딩 해야하는 단점도 존재한다. 스프링 프레임워크를 쓰는 이유가 강력한 Dependency Injection(의존 주입)에 의한 IoC 컨테이너를 사용 하기 위함도 있을 것이다.</p><p>특히 스프링 부트를 사용한다면 application.properties (또는 yaml)의 존재를 알 것이다. properties와 <a href=https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html>@Value</a> 애노테이션의 조합으로 DI를 이용해 불러 올 수도 있다.</p><pre tabindex=0><code class=language-properties data-lang=properties>load.resource=classpath:load.txt
 </code></pre><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -277,57 +188,40 @@ Resource 인터페이스와 구현체
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=nd>@Component</span>
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>LoadResource</span> <span class=o>{</span>
-
-   <span class=kd>private</span> <span class=kd>final</span> <span class=n>String</span> <span class=n>loaded</span><span class=o>;</span>
-
-   <span class=nd>@Autowired</span>
-   <span class=kd>public</span> <span class=nf>LoadResource</span><span class=o>(</span><span class=nd>@Value</span><span class=o>(</span><span class=s>&#34;${load.resource}&#34;</span><span class=o>)</span> <span class=n>Resource</span> <span class=n>loaded</span><span class=o>)</span> <span class=o>{</span>
-      <span class=k>this</span><span class=o>.</span><span class=na>loaded</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToStream</span><span class=o>(</span><span class=n>loaded</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-   <span class=o>}</span>
-
-   <span class=kd>public</span> <span class=n>String</span> <span class=nf>getLoaded</span><span class=o>()</span> <span class=o>{</span>
-      <span class=k>return</span> <span class=n>loaded</span><span class=o>;</span>
-   <span class=o>}</span>
-<span class=o>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>또는 이와 같이 Value 애노테이션에 하드코딩하여 넣을 수도 있다.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Component</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>LoadResource</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>private</span> <span class=kd>final</span> <span class=n>String</span> <span class=n>loaded</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Autowired</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>LoadResource</span><span class=o>(</span><span class=nd>@Value</span><span class=o>(</span><span class=s>&#34;${load.resource}&#34;</span><span class=o>)</span> <span class=n>Resource</span> <span class=n>loaded</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>loaded</span> <span class=o>=</span> <span class=n>StreamUtils</span><span class=o>.</span><span class=na>copyToStream</span><span class=o>(</span><span class=n>loaded</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>getLoaded</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>loaded</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>또는 이와 같이 Value 애노테이션에 하드코딩하여 넣을 수도 있다.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=nd>@Value</span><span class=o>(</span><span class=s>&#34;classpath:load.txt&#34;</span><span class=o>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=마치며>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Value</span><span class=o>(</span><span class=s>&#34;classpath:load.txt&#34;</span><span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=마치며>
 <a href=#%eb%a7%88%ec%b9%98%eb%a9%b0 class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
 </a>
 마치며
-</h2>
-<p>물론 스프링 프레임워크를 사용하지 않아도, Java를 사용한다면 아래와 같은 친숙한 라이브러리들이 있다.</p>
-<ul>
+</h2><p>물론 스프링 프레임워크를 사용하지 않아도, Java를 사용한다면 아래와 같은 친숙한 라이브러리들이 있다.</p><ul>
 <li>
-<p><a href=https://commons.apache.org/proper/commons-io/>commons-io</a></p>
-<div class=highlight><div class=chroma>
+<p><a href=https://commons.apache.org/proper/commons-io/>commons-io</a></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>IOUtils</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><a href=https://guava.dev/>Guava</a></p>
-<ul>
-<li>InputStream을 String으로 변환.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>IOUtils</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>inputStream</span><span class=o>,</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div></li><li>
+<p><a href=https://guava.dev/>Guava</a></p><ul>
+<li>InputStream을 String으로 변환.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -336,72 +230,41 @@ Resource 인터페이스와 구현체
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>ByteSource</span> <span class=n>source</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteSource</span><span class=o>()</span> <span class=o>{</span>
-<span class=nd>@Override</span>
-<span class=kd>public</span> <span class=n>InputStream</span> <span class=nf>openStream</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>IOException</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=n>inputStream</span><span class=o>;</span>
-<span class=o>}</span>
-<span class=o>};</span>
-<span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>source</span><span class=o>.</span><span class=na>asCharSource</span><span class=o>(</span><span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>).</span><span class=na>read</span><span class=o>();</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>classpath 내 파일을 읽어 String으로 가져오기.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>ByteSource</span> <span class=n>source</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteSource</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nd>@Override</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=n>InputStream</span> <span class=nf>openStream</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>IOException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>inputStream</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>};</span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>source</span><span class=o>.</span><span class=na>asCharSource</span><span class=o>(</span><span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>).</span><span class=na>read</span><span class=o>();</span>
+</span></span></code></pre></td></tr></table></div></div><ul>
+<li>classpath 내 파일을 읽어 String으로 가져오기.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>Resources</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>Resources</span><span class=o>.</span><span class=na>getResource</span><span class=o>(</span><span class=s>&#34;load.txt&#34;</span><span class=o>),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>JDK 9 이상</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>Resources</span><span class=o>.</span><span class=na>toString</span><span class=o>(</span><span class=n>Resources</span><span class=o>.</span><span class=na>getResource</span><span class=o>(</span><span class=s>&#34;load.txt&#34;</span><span class=o>),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div></li><li>
+<p>JDK 9 이상</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>inputStream</span><span class=o>.</span><span class=na>readAllBytes</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<p>Apache Commons와 Google Guava는 둘 다 많이 찾고 쓰는 자바 라이브러리 묶음들이다. IO부분은 commons-io 라이브러리가 간편하고 강력한 편이지만 개인적으론 Guava가 라이브러리 구성이 좋아 선호한다.</p>
-<p>최근 JDK 버전들은 유틸 클래스 등도 강화가 많이 되어, 특정 라이브러리가 없어도 개발이 많이 편해졌다. 그래도 스프링 프레임워크의 강력한 기능과 엮어 사용하면 더욱 더 강력하고 객체지향적이게 사용할 수 있다.</p>
-</div>
-</div>
-<div class=container>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>String</span><span class=o>(</span><span class=n>inputStream</span><span class=o>.</span><span class=na>readAllBytes</span><span class=o>(),</span> <span class=n>StandardCharsets</span><span class=o>.</span><span class=na>UTF_8</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul><p>Apache Commons와 Google Guava는 둘 다 많이 찾고 쓰는 자바 라이브러리 묶음들이다. IO부분은 commons-io 라이브러리가 간편하고 강력한 편이지만 개인적으론 Guava가 라이브러리 구성이 좋아 선호한다.</p><p>최근 JDK 버전들은 유틸 클래스 등도 강화가 많이 되어, 특정 라이브러리가 없어도 개발이 많이 편해졌다. 그래도 스프링 프레임워크의 강력한 기능과 엮어 사용하면 더욱 더 강력하고 객체지향적이게 사용할 수 있다.</p></div></div><div class=container>
 <nav class="flex container suggested">
 <a rel=next href=/posts/2021/spring-rest-template-and-request-entity-and-uri/ title="Next post (newer)">
 <span>Next</span>
 스프링 RestTemplate 잘 활용하기
 </a>
-</nav>
-</div>
-<div class=container>
+</nav></div><div class=container>
 <script src=https://giscus.app/client.js data-repo=mike-kwak/blog data-repo-id=R_kgDOGQ4Puw data-category=Comments data-category-id=DIC_kwDOGQ4Pu84B_iwM data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-theme=light crossorigin=anonymous async></script>
-<script>function setGiscusTeheme(b){let a=document.querySelector('.giscus iframe');a&&a.contentWindow.postMessage({giscus:{setConfig:{theme:b}}},'https://giscus.app')}addEventListener('message',a=>{if(a.origin!=='https://giscus.app')return;setGiscusTeheme(document.documentElement.dataset.userColorScheme)}),window.addEventListener('onColorSchemeChange',a=>{setGiscusTeheme(a.detail)})</script>
-</div>
-</main>
-</main>
-<footer class="footer flex">
+<script>function setGiscusTeheme(t){let e=document.querySelector(".giscus iframe");e&&e.contentWindow.postMessage({giscus:{setConfig:{theme:t}}},"https://giscus.app")}addEventListener("message",e=>{if(e.origin!=="https://giscus.app")return;setGiscusTeheme(document.documentElement.dataset.userColorScheme)}),window.addEventListener("onColorSchemeChange",e=>{setGiscusTeheme(e.detail)})</script>
+</div></main></main><footer class="footer flex">
 <section class=container>
 <nav class=footer-links>
 <a href=/about/>About</a>
 <a href=https://github.com/mike-kwak>Github</a>
 <a href=/index.xml>RSS</a>
-</nav>
-<div class=footer-copyright>
-<p>&copy; 2021 Mike.</p>
-<p>Article is <a href=https://creativecommons.org/licenses/by/4.0/deed.ko>CC-BY 4.0</a>. Sample code is <a href=https://creativecommons.org/publicdomain/mark/1.0/>Public Domain</a>. <a href=/about/#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4>More Licences</a>.</p>
-</div>
-</section>
-<script defer src=/ts/features.c81551cd4dbef120af278f16966a41142c02be9ff5d6a669be09820fbf047456.js data-enable-footnotes=true></script>
-</footer>
-</body>
-</html>
+</nav><div class=footer-copyright>
+<p>&copy; 2021 Mike.</p><p>Article is <a href=https://creativecommons.org/licenses/by/4.0/deed.ko>CC-BY 4.0</a>. Sample code is <a href=https://creativecommons.org/publicdomain/mark/1.0/>Public Domain</a>. <a href=/about/#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4>More Licences</a>.</p></div></section><script defer src=/ts/features.a534d05c446023fa2ae2a638f87cc2443ad8e49f6aaeb4d9f24ed61d53766712.js data-enable-footnotes=true></script>
+</footer></body></html>

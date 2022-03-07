@@ -99,12 +99,12 @@ OkHttp 라이브러리 설정 방법
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.squareup.okhttp3&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>okhttp&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>4.9.2&lt;span class="c">&amp;lt;!-- 2021/10 기준 최신버전 --&amp;gt;&lt;/span>&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.squareup.okhttp3&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>okhttp&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>4.9.2&lt;span class="c">&amp;lt;!-- 2021/10 기준 최신버전 --&amp;gt;&lt;/span>&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -114,8 +114,8 @@ OkHttp 라이브러리 설정 방법
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-groovy" data-lang="groovy">&lt;span class="n">implementation&lt;/span> &lt;span class="s1">&amp;#39;com.squareup.okhttp3:okhttp:4.9.2&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-groovy" data-lang="groovy">&lt;span class="line">&lt;span class="cl">&lt;span class="n">implementation&lt;/span> &lt;span class="s1">&amp;#39;com.squareup.okhttp3:okhttp:4.9.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ul>
@@ -153,12 +153,12 @@ Apache HttpComponents 라이브러리 설정 방법
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.httpcomponents&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>httpclient&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>4.5.13&lt;span class="c">&amp;lt;!-- 2021/10 기준 최신버전 --&amp;gt;&lt;/span>&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.httpcomponents&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>httpclient&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>4.5.13&lt;span class="c">&amp;lt;!-- 2021/10 기준 최신버전 --&amp;gt;&lt;/span>&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -168,8 +168,8 @@ Apache HttpComponents 라이브러리 설정 방법
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-groovy" data-lang="groovy">&lt;span class="n">implementation&lt;/span> &lt;span class="s1">&amp;#39;org.apache.httpcomponents:httpclient:4.5.13&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-groovy" data-lang="groovy">&lt;span class="line">&lt;span class="cl">&lt;span class="n">implementation&lt;/span> &lt;span class="s1">&amp;#39;org.apache.httpcomponents:httpclient:4.5.13&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ul>
@@ -213,22 +213,25 @@ HttpClientConfiguration 설정 코드
 &lt;/span>&lt;span class="lnt">18
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">okhttp3.OkHttpClient&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.boot.web.client.RestTemplateBuilder&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="nd">@Configuration&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HttpClientConfiguration&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()))&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">okhttp3.OkHttpClient&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.boot.web.client.RestTemplateBuilder&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HttpClientConfiguration&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -256,23 +259,26 @@ HttpClientConfiguration 설정 코드
 &lt;/span>&lt;span class="lnt">19
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.client.HttpClient&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.impl.client.HttpClients&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.boot.web.client.RestTemplateBuilder&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="nd">@Configuration&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HttpClientConfiguration&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClients&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">createDefault&lt;/span>&lt;span class="o">()))&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.client.HttpClient&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.impl.client.HttpClients&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.boot.web.client.RestTemplateBuilder&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HttpClientConfiguration&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClients&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">createDefault&lt;/span>&lt;span class="o">()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ul>
@@ -296,17 +302,19 @@ HttpClientConfiguration 설정 코드
 &lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">okhttp3.OkHttpClient&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">RestTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()));&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">okhttp3.OkHttpClient&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">RestTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -328,18 +336,20 @@ HttpClientConfiguration 설정 코드
 &lt;/span>&lt;span class="lnt">13
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.client.HttpClient&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.impl.client.HttpClients&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">RestTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClients&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">createDefault&lt;/span>&lt;span class="o">());&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.client.HttpClient&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.apache.http.impl.client.HttpClients&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Bean&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.context.annotation.Configuration&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.web.client.RestTemplate&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">RestTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">HttpComponentsClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClients&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">createDefault&lt;/span>&lt;span class="o">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ul>
@@ -398,38 +408,44 @@ Interceptor 구현 및 등록
 &lt;/span>&lt;span class="lnt">37
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="o">...&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.slf4j.Logger&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.slf4j.LoggerFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.ClientHttpRequestInterceptor&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.ClientHttpResponse&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="kd">final&lt;/span> &lt;span class="n">Logger&lt;/span> &lt;span class="n">log&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">LoggerFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getLogger&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClientConfiguration&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()))&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">interceptors&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">loggingInterceptor&lt;/span>&lt;span class="o">())&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="n">ClientHttpRequestInterceptor&lt;/span> &lt;span class="nf">loggingInterceptor&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">reqBody&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">execution&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="c1">// HTTP Request 로그
-&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">isDebugEnabled&lt;/span>&lt;span class="o">())&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">debug&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;req {} {}, body: {}&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">req&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getMethodValue&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">req&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getURI&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">reqBody&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">));&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="c1">// HTTP 요청 실행
-&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">ClientHttpResponse&lt;/span> &lt;span class="n">res&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">execution&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">execute&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">reqBody&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="c1">// HTTP Response 로그
-&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">isDebugEnabled&lt;/span>&lt;span class="o">())&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">debug&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;res {}, body: {}&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">res&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getRawStatusCode&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">res&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">));&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">res&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">};&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.slf4j.Logger&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.slf4j.LoggerFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.ClientHttpRequestInterceptor&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.ClientHttpResponse&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="kd">final&lt;/span> &lt;span class="n">Logger&lt;/span> &lt;span class="n">log&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">LoggerFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getLogger&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">HttpClientConfiguration&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">interceptors&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">loggingInterceptor&lt;/span>&lt;span class="o">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span> &lt;span class="n">ClientHttpRequestInterceptor&lt;/span> &lt;span class="nf">loggingInterceptor&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">reqBody&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">execution&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// HTTP Request 로그
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">isDebugEnabled&lt;/span>&lt;span class="o">())&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">debug&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;req {} {}, body: {}&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">req&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getMethodValue&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">req&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getURI&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">reqBody&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// HTTP 요청 실행
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">ClientHttpResponse&lt;/span> &lt;span class="n">res&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">execution&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">execute&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">reqBody&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// HTTP Response 로그
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">isDebugEnabled&lt;/span>&lt;span class="o">())&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">debug&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;res {}, body: {}&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">res&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getRawStatusCode&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">res&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">res&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>위와 같은 코드로 인터페이스 내에 메소드는 하나이기 때문에, 람다로 구현할 수 있다. 그리고 &lt;code>RestTemplate&lt;/code> Bean 생성 시에 인터셉터를 삽입해줄 수 있다.&lt;/p>
 &lt;p>문제는 &lt;code>ClientHttpRequestInterceptor&lt;/code> 내 응답 &lt;code>InputStream&lt;/code>을 현재 상태에서 구현 후 사용 시 인터셉터 내에서는 데이터가 존재하지만, 실제로 &lt;code>RestTemplate&lt;/code> 객체를 사용한 곳에 리턴 값이 존재하지 않아 예외가 던저지거나 객체 내 값들이 null일 수 있다. 그 이유는 인터셉터 내의 &lt;code>InputStream&lt;/code>이 한번 사용하면 스트림이 소모되어 다시 사용할 수 없게 되기 때문이다.&lt;/p>
@@ -454,18 +470,19 @@ Interceptor 구현 및 등록
 &lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="o">...&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.BufferingClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="nd">@Bean&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">BufferingClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>
-&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">())&lt;/span>
-&lt;span class="o">))&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.client.BufferingClientHttpRequestFactory&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="nf">restTemplate&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RestTemplateBuilder&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplateBuilder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">requestFactory&lt;/span>&lt;span class="o">(()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">BufferingClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">new&lt;/span> &lt;span class="n">OkHttp3ClientHttpRequestFactory&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">OkHttpClient&lt;/span>&lt;span class="o">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="resttemplate-잘-사용하기">
 &lt;a href="#resttemplate-%ec%9e%98-%ec%82%ac%ec%9a%a9%ed%95%98%ea%b8%b0" class="anchor">
@@ -484,9 +501,9 @@ RestTemplate 잘 사용하기
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="nd">@Autowired&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span> &lt;span class="n">RestTemplate&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>위에서 두 &lt;code>exchange&lt;/code> 메소드를 언급했었다.&lt;/p>
 &lt;ul>
@@ -504,8 +521,8 @@ RestTemplate 잘 사용하기
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;()&lt;/span> &lt;span class="o">{}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;()&lt;/span> &lt;span class="o">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>&lt;a href="https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/http/RequestEntity.html">Spring RequestEntity JavaDoc (Spring Framework 4.1 이상)&lt;/a>&lt;/li>
@@ -519,11 +536,11 @@ RestTemplate 잘 사용하기
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="nd">@PostMapping&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;/post&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">post&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@PostMapping&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;/post&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">post&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>여기서는 RestTemplate의 요청 객체로 선언하여 사용할 수 있다. 아래는 간단한 예제이다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -541,15 +558,18 @@ RestTemplate 잘 사용하기
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.ParameterizedTypeReference&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.RequestEntity&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.net.URI&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nf">request&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Void&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">get&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">URI&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">create&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://httpbin.org/anything&amp;#34;&lt;/span>&lt;span class="o">)).&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">exchange&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;()&lt;/span> &lt;span class="o">{}).&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.ParameterizedTypeReference&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.RequestEntity&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.net.URI&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nf">request&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Void&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">get&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">URI&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">create&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://httpbin.org/anything&amp;#34;&lt;/span>&lt;span class="o">)).&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">exchange&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;()&lt;/span> &lt;span class="o">{}).&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>조금 더 복잡한 예제인 아래와 같은 형태의 JSON 문서를 POST 요청 하는 것을 해보자.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -562,13 +582,13 @@ RestTemplate 잘 사용하기
 &lt;/span>&lt;span class="lnt">6
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="p">{&lt;/span>
-&lt;span class="nt">&amp;#34;send_id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="nt">&amp;#34;message&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Hello, Mike!&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="nt">&amp;#34;receiver&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;mike&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;anonymous&amp;#34;&lt;/span>&lt;span class="p">],&lt;/span>
-&lt;span class="nt">&amp;#34;is_beep&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;send_id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;message&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Hello, Mike!&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;receiver&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;mike&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;anonymous&amp;#34;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;is_beep&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>이러한 JSON 객체를 요청하고 응답하는 메소드는 다음과 같다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -599,25 +619,31 @@ RestTemplate 잘 사용하기
 &lt;/span>&lt;span class="lnt">24
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.ParameterizedTypeReference&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.RequestEntity&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.net.URI&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.Arrays&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.Map&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.HashMap&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nf">request&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">requestBodyMap&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">HashMap&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;send_id&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;message&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;Hello, Mike!&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;receiver&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Arrays&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">asList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;mike&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;anonymous&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
-&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;is_beep&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span> &lt;span class="o">=&lt;/span>
-&lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">post&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">URI&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">create&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://httpbin.org/anything&amp;#34;&lt;/span>&lt;span class="o">))&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">body&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">exchange&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;()&lt;/span> &lt;span class="o">{}).&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.ParameterizedTypeReference&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.http.RequestEntity&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.net.URI&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.Arrays&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.Map&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.util.HashMap&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nf">request&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">requestBodyMap&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">HashMap&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;send_id&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;message&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;Hello, Mike!&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;receiver&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Arrays&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">asList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;mike&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;anonymous&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;is_beep&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Object&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">request&lt;/span> &lt;span class="o">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">RequestEntity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">post&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">URI&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">create&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://httpbin.org/anything&amp;#34;&lt;/span>&lt;span class="o">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">body&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">requestBodyMap&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">restTemplate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">exchange&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ParameterizedTypeReference&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;()&lt;/span> &lt;span class="o">{}).&lt;/span>&lt;span class="na">getBody&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>간단한 형태는 &lt;code>Map&amp;lt;String, Object&amp;gt;&lt;/code> 타입으로 주고 받을 수 있고, 복잡한 형태는 Value Object 클래스를 만들어 사용할 수도 있다.&lt;/p>
 &lt;h3 id="exception">
@@ -791,12 +817,12 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">UriComponents&lt;/span> &lt;span class="n">hostUriComponents&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">UriComponentsBuilder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">fromHttpUrl&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://www.example.com&amp;#34;&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="n">URI&lt;/span> &lt;span class="n">uri&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">UriComponentsBuilder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">fromPath&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;/test/{testNumber}&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">uriComponents&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">hostUriComponents&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">queryParam&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;query&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;span class="o">.&lt;/span>&lt;span class="na">buildAndExpand&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">toUri&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">UriComponents&lt;/span> &lt;span class="n">hostUriComponents&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">UriComponentsBuilder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">fromHttpUrl&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;https://www.example.com&amp;#34;&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">build&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">URI&lt;/span> &lt;span class="n">uri&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">UriComponentsBuilder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">fromPath&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;/test/{testNumber}&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">uriComponents&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">hostUriComponents&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">queryParam&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;query&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">.&lt;/span>&lt;span class="na">buildAndExpand&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">toUri&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>URI 구조가 복잡하거나, 코드 분기에 따라 URI 형태가 바뀌어야 한다면 &lt;code>UriComponentsBuilder&lt;/code> 클래스를 잘 사용하면 쉽게 URI 객체를 생성할 수 있다.&lt;/p>
 &lt;h2 id="마치며">
@@ -847,19 +873,19 @@ StreamUtils 유틸 클래스
 &lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="c1">// 가장 빠르다던 ByteArrayOutputStream 이용: https://stackoverflow.com/a/35446009
-&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kd">public&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="nf">streamToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">InputStream&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="kd">throws&lt;/span> &lt;span class="n">IOException&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">ByteArrayOutputStream&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ByteArrayOutputStream&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;span class="kt">byte&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">buffer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="kt">byte&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">1024&lt;/span>&lt;span class="o">];&lt;/span>
-&lt;span class="k">for&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">length&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">read&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="o">))&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">write&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="c1">// JDK 1.7 미만 사용 시 &amp;#34;UTF-8&amp;#34;로 대체
-&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">name&lt;/span>&lt;span class="o">());&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">streamToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 가장 빠르다던 ByteArrayOutputStream 이용: https://stackoverflow.com/a/35446009
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">public&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="nf">streamToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">InputStream&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="kd">throws&lt;/span> &lt;span class="n">IOException&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ByteArrayOutputStream&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ByteArrayOutputStream&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">byte&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">buffer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="kt">byte&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">1024&lt;/span>&lt;span class="o">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">length&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">read&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="o">))&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">write&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// JDK 1.7 미만 사용 시 &amp;#34;UTF-8&amp;#34;로 대체
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">name&lt;/span>&lt;span class="o">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">streamToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>물론 위 코드를 유틸클래스를 만들어서 구현하는 방법도 괜찮다. Java 내에선 가장 빠른 코드이기 때문이다. 하지만 저 코드가 생각나지 않을 때는 어떻게 할까? 아니면 String이 아니라 다른 형태로 받고 싶다면? &lt;code>commons-io&lt;/code> 라이브러리의 &lt;code>IOUtils&lt;/code> 유틸 클래스와 비슷하게, 스프링 프레임워크는 이미 &lt;code>StreamUtils&lt;/code> 유틸 클래스를 준비해두었다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -870,11 +896,11 @@ StreamUtils 유틸 클래스
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="자주-쓰는-메소드">
 &lt;a href="#%ec%9e%90%ec%a3%bc-%ec%93%b0%eb%8a%94-%eb%a9%94%ec%86%8c%eb%93%9c" class="anchor">
@@ -929,9 +955,9 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Charset&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">forName&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Charset&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">forName&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>이런 식으로 처리 했어야 했는데, 문제는 String 타입의 매개변수의 문자셋 코드가 잘못 입력했을 때이다. 그땐 UnsupportEncodingException으로 인해 프로그램이 중단된다. IOException의 자식 클래스여서 더 심각했다.&lt;/p>
 &lt;p>그래서 표준 문자셋 객체 상수를 StandardCharsets 클래스에 정의하였다. 따라서 이제는 다음과 같이 안전하게 처리할 수 있다.&lt;/p>
@@ -940,8 +966,8 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>만약, EUC-KR을 쓰고 싶다면? Exception을 처리해야 할 위험성이 계속 존재하지만 다음과 같은 방법으로 해야 한다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -949,8 +975,8 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Charset&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">forName&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;EUC-KR&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">byteArray&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Charset&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">forName&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;EUC-KR&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="filecopyutils-유틸-클래스">
 &lt;a href="#filecopyutils-%ec%9c%a0%ed%8b%b8-%ed%81%b4%eb%9e%98%ec%8a%a4" class="anchor">
@@ -1003,14 +1029,14 @@ Resource 인터페이스와 구현체
 &lt;/span>&lt;span class="lnt">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.io.Resource&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.io.ClassPathResource&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="n">Resource&lt;/span> &lt;span class="n">resource&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ClassPathResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;load.txt&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="n">String&lt;/span> &lt;span class="n">loaded&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">resource&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getInputStream&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.io.Resource&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.core.io.ClassPathResource&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">org.springframework.util.StreamUtils&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">java.nio.charset.StandardCharsets&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Resource&lt;/span> &lt;span class="n">resource&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ClassPathResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;load.txt&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">loaded&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">resource&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getInputStream&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>간편한 방법이지만 이건 경로를 직접 하드코딩 해야하는 단점도 존재한다. 스프링 프레임워크를 쓰는 이유가 강력한 Dependency Injection(의존 주입)에 의한 IoC 컨테이너를 사용 하기 위함도 있을 것이다.&lt;/p>
 &lt;p>특히 스프링 부트를 사용한다면 application.properties (또는 yaml)의 존재를 알 것이다. properties와 &lt;a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html">@Value&lt;/a> 애노테이션의 조합으로 DI를 이용해 불러 올 수도 있다.&lt;/p>
@@ -1033,18 +1059,21 @@ Resource 인터페이스와 구현체
 &lt;/span>&lt;span class="lnt">14
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="nd">@Component&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">LoadResource&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="kd">private&lt;/span> &lt;span class="kd">final&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="nd">@Autowired&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="nf">LoadResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nd">@Value&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;${load.resource}&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">Resource&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">this&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">loaded&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToStream&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">loaded&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getInputStream&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="nf">getLoaded&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Component&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">LoadResource&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">private&lt;/span> &lt;span class="kd">final&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="nf">LoadResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nd">@Value&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;${load.resource}&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">Resource&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">this&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">loaded&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">StreamUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">copyToStream&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">loaded&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getInputStream&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="nf">getLoaded&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">loaded&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>또는 이와 같이 Value 애노테이션에 하드코딩하여 넣을 수도 있다.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1052,8 +1081,8 @@ Resource 인터페이스와 구현체
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="nd">@Value&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;classpath:load.txt&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Value&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;classpath:load.txt&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="마치며">
 &lt;a href="#%eb%a7%88%ec%b9%98%eb%a9%b0" class="anchor">
@@ -1074,8 +1103,8 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">IOUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">IOUtils&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -1094,14 +1123,14 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/span>&lt;span class="lnt">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">ByteSource&lt;/span> &lt;span class="n">source&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ByteSource&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="nd">@Override&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">InputStream&lt;/span> &lt;span class="nf">openStream&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="kd">throws&lt;/span> &lt;span class="n">IOException&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">};&lt;/span>
-&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">source&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">asCharSource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">read&lt;/span>&lt;span class="o">();&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">ByteSource&lt;/span> &lt;span class="n">source&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ByteSource&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">InputStream&lt;/span> &lt;span class="nf">openStream&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="kd">throws&lt;/span> &lt;span class="n">IOException&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">inputStream&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">source&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">asCharSource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">).&lt;/span>&lt;span class="na">read&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>classpath 내 파일을 읽어 String으로 가져오기.&lt;/li>
@@ -1111,8 +1140,8 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Resources&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">Resources&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;load.txt&amp;#34;&lt;/span>&lt;span class="o">),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Resources&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">toString&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">Resources&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getResource&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;load.txt&amp;#34;&lt;/span>&lt;span class="o">),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
@@ -1122,8 +1151,8 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">readAllBytes&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">String&lt;/span> &lt;span class="n">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">inputStream&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">readAllBytes&lt;/span>&lt;span class="o">(),&lt;/span> &lt;span class="n">StandardCharsets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">UTF_8&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ul>
